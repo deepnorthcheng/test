@@ -11,5 +11,5 @@
 * Compatible with model build by many existing frameworks
 
 [BitBucket](https://bitbucket.com/VMaxx/Sunergy/)
-[GitHub](https://github.com/VMaxxInc/Sunergy_multiPlatform)
+[GitHub](https://github.com/DeepNorthAI/Sunergy_multiPlatform)
 [Get Started](#Sunergy)
