@@ -1,76 +1,94 @@
 # GPU Driver
 
-## 查看内核版本
+## View the kernel version
 ```bash
 uname -r 
 ```
-4.10.0-42-generic 版本号要小于4.13.0才可以使用
+4.10.0-42-generic 
+Version number should be less than 4.13.0 before it can be used
 
-关闭内核更新
+Turn off kernel updates
 ```bash
 sudo apt-mark hold linux-image-extra-4.10.0-28-generic
 sudo apt-mark hold linux-image-4.10.0-28-generic
 ```
 
-系统设置-> 软件和更新->更新
-修改成如图形式
-![](https://github.com/VMaxxInc/Sunergy_multiPlatform/blob/master/docs/screenshot/system_config.png)
+System Settings - > Software and Updates - > Updates
 
-## 禁用 nouveau 驱动
-以sudo权限打开 
+
+Modify form as below
+![](https://github.com/DeepNorthAI/Sunergy_multiPlatform/tree/master/docs/screenshot/system_config.png)
+
+## Disable the nouveau
+
+Open with sudo privileges
+
 ```bash
 sudo gedit /etc/modprobe.d/blacklist-nouveau.conf 
 ```
 
-在文件的末尾添加以下内容 
+Add the following at the end of the file
 ```bash
 blacklist nouveau  
 options nouveau modset=0
 ```
 
-保存退出
-然后执行
+
+
+Save exit
+Execute
 ```bash
 sudo update-initramfs -u
 ```
 
-重启电脑
+Reboot
 ```bash
 reboot
 ```
 
-检查是否禁用成功
+
+Check for successful disablement
+
 ```bash
 lspci | grep nouveau 
 ```
 
-如果没有内容 ，说明禁用成功，如果有内容，就重启一下再查看
+If there is no content, the disablement is successful. If there is content, restart it and review it again
 
-## 下载安装驱动
+## Download Nvidia Driver
 
-下载1080显卡稳定版驱动384.98
+
+
+Download GTX 1080 graphics stable driver 384.98
+
 ```bash
 wget https://s3-us-west-2.amazonaws.com/vmaxx0/pyEvent_release/NVIDIA-Linux-x86_64-384.98.run
 ```
-设置驱动的权限
+
+Setting Driven Permissions
+
 ```bash
 sudo chmod +x NVIDIA-Linux-x86_64-384.98.run
 ```
 
-使用 ctrl+alt+f1 进如tty1终端模式
+Use ctrl+alt+f1 access tty1 Backstage mode
 
-关闭 Display Manager
+
+Close Display Manager
 ```bash
 sudo service lightdm stop
 ```
 
-使用sudo命令安装驱动
-检查显示器的数据线与主机连接方式
-若数据线从独立显卡上连接
+Install drivers with sudo commands
+
+Check the connection mode between the data line of the display and the host computer
+
+If the data line is connected from an independent graphics card
 ```bash
 sudo ./NVIDIA-Linux-x86_64-384.98.run
 ```
-若数据线从集成显卡上连接 
+If the data line is connected from the integrated graphics card
+
 ```bash
 sudo ./NVIDIA-Linux-x86_64-384.98.run --no-opengl-files
 ```
@@ -93,15 +111,15 @@ sudo ./NVIDIA-Linux-x86_64-384.98.run --no-opengl-files
 > 
 
 
-重启电脑，然后检查驱动是否安装成功
+Restart the computer and check the driver installed successfully
 ```bash
 reboot
 ```
 
-使用Nvidia 系统管理接口程序查看驱动安装情况
+Use Nvidia System Management Interface Program to View Driver Installation
 ```bash
 nvidia-smi
 ```
-如果有gpu的信息输出说明驱动安装成功，请注意查看Driver Version 
-![http://yicun.vmaxx.tech:3000/mingzhe_pan/sunergy_multiplatform/src/master/docs/screenshot/smi.png](https://github.com/VMaxxInc/Sunergy_multiPlatform/blob/master/docs/screenshot/smi.png)
+If the information output of the GPU indicates that the driver has been installed successfully, please check Driver Version
+![http://yicun.vmaxx.tech:3000/mingzhe_pan/sunergy_multiplatform/src/master/docs/screenshot/smi.png](https://github.com/DeepNorthAI/Sunergy_multiPlatform/tree/master/docs/screenshot/smi.png)
 
