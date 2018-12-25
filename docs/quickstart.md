@@ -13,8 +13,8 @@ pip install opencv-python
 
 If you do not use GPU environment, please skip
 
-* [Check GPU Driver Installation](/gpu_driver.md)<br>
-* [Check CUDA environment](/cuda8.0&cudnnv6.md)<br>
+* [Check GPU Driver Installation](gpu_driver.md)<br>
+* [Check CUDA environment](cuda8.0&cudnnv6.md)<br>
 
 ## Clone sunergy source from github
 ```bash
