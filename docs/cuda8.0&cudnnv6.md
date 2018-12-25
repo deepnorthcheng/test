@@ -1,25 +1,31 @@
 # cuda8.0 and cudnn v6
 
 
-## 安装cuda8.0
-使用S3连接下载cuda8.0
+## Install cuda8.0
+Using S3 download cuda8.0
 ```bash
 wget https://s3-us-west-2.amazonaws.com/vmaxx0/pyEvent_release/cuda/cuda_8.0.61_375.26_linux.run
 ```
 
-设置访问权限
+
+
+Setting Access Permissions
+
 ```bash
 chmod 777 cuda_8.0.61_375.26_linux.run 
 ```
 
-执行安装
+Install
 ```bash
 sudo ./cuda_8.0.61_375.26_linux.run
 ```
 
-ctrl+c跳过文字
+ctrl+c skip the words
 
-安装过程按如下选项
+
+
+Installation proceeds with the following options
+
 ```bash
 Do you accept the previously read EULA?
 accept/decline/quit: accept
@@ -43,45 +49,48 @@ Enter CUDA Samples Location
  [ default is /home/ubuntu ]: enter
 ```
 
-设置cuda路径
+Set cuda path
 ```bash
 sudo gedit ~/.bashrc
 ```
 
-末尾加入
+Insert
 ```bash
 export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 ```
 
-保存关闭
+Save and exit
 ```bash
 source ~/.bashrc 
 ```
 
-## 安装cudnn-v6
-使用S3连接下载cudnnv6版本
+## Install cudnn-v6
+Using S3 download cudnnv6
 ```bash
 wget https://s3-us-west-2.amazonaws.com/vmaxx0/pyEvent_release/cudnn/cudnn-8.0-linux-x64-v6.0.tgz
 ```
 
-设置访问权限并解压
+
+Set access permissions and Unzip
+
 ```bash
 chmod 777 cudnn-8.0-linux-x64-v6.0.tgz 
 tar -xvf cudnn-8.0-linux-x64-v6.0.tgz 
 ```
 
-拷贝文件至cuda目录
+Copy files to CUDA directory
+
 ```bash
 sudo cp cuda/include/cudnn.h /usr/local/cuda-8.0/include/cudnn.h 
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 ```
 
-编译smaple并执行测试安装结果
+Compile smaple and execute sample
 ```bash
 cd ~/NVIDIA_CUDA-8.0_Samples/1_Utilities/deviceQuery/
 make
 ./deviceQuery 
 ```
 
-执行后最终显示PASS则说明安装成功
+Final display of PASS after execution indicates successful installation
