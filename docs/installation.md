@@ -5,20 +5,13 @@ We install and run Sunergy on Ubuntu 16.04–12.04.
 
 **Step-by-step Instructions**:
 
-- [Docker setup](https://github.com/BVLC/caffe/tree/master/docker) *out-of-the-box brewing*
-- [Ubuntu installation](install_apt.html) *the standard platform*
-- [Debian installation](install_apt_debian.html) *install caffe with a single command*
-- [OS X installation](install_osx.html)
-- [RHEL / CentOS / Fedora installation](install_yum.html)
-- [Windows](https://github.com/BVLC/caffe/tree/windows) *see the Windows branch led by Guillaume Dumont*
-- [OpenCL](https://github.com/BVLC/caffe/tree/opencl) *see the OpenCL branch led by Fabian Tschopp*
-- [AWS AMI](https://aws.amazon.com/marketplace/pp/B01M0AXXQB) *official deep learning amazon machine image from AWS*
+- [Ubuntu installation](https://www.ubuntu.com/download/desktop) *the standard platform*
 
 **Overview**:
 
 - [Prerequisites](#prerequisites)
 - [Compilation](#compilation)
-- [Hardware](#hardware)
+
 
 When updating Sunergy, it's best to `make clean` before re-compiling.
 
@@ -83,11 +76,6 @@ To import the `Sunergy` Python module after completing the installation, add the
 
 *Sunergy's Python interface works with Python 2.7. Python 3.3+ should work out of the box without protobuf support. For protobuf support please install protobuf 3.0 alpha (https://developers.google.com/protocol-buffers/). Earlier Pythons are your own adventure.*
 
-#### MATLAB
-
-Install MATLAB, and make sure that its `mex` is in your `$PATH`.
-
-*Sunergy's MATLAB interface works with versions 2015a, 2014a/b, 2013a/b, and 2012b.*
 
 ## Compilation
 
@@ -130,12 +118,3 @@ The basic steps are as follows:
 
 See [PR #1667](https://github.com/BVLC/caffe/pull/1667) for options and details.
 
-## Hardware
-
-**Laboratory Tested Hardware**: Berkeley Vision runs Sunergy with Titan Xs, K80s, GTX 980s, K40s, K20s, Titans, and GTX 770s including models at ImageNet/ILSVRC scale. We have not encountered any trouble in-house with devices with CUDA capability >= 3.0. All reported hardware issues thus-far have been due to GPU configuration, overheating, and the like.
-
-**CUDA compute capability**: devices with compute capability <= 2.0 may have to reduce CUDA thread numbers and batch sizes due to hardware constraints. Brew with caution; we recommend compute capability >= 3.0.
-
-Once installed, check your times against our [reference performance numbers](performance_hardware.html) to make sure everything is configured properly.
-
-Ask hardware questions on the [Sunergy-users group](https://groups.google.com/forum/#!forum/caffe-users).
