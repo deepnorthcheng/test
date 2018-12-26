@@ -1,6 +1,5 @@
 ## Python 接口
 
-# Python 接口
 
 ## 载入Sunergy库
 
