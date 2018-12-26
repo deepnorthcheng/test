@@ -1,8 +1,7 @@
 * Getting started
 
   * [Quick start](quickstart.md)
-  * [Installation](installation.md)
-  * [Configuration](configuration.md)
+  * [Installation](installation.md) 
   * [Examples](example.md)
 
 * Interface
