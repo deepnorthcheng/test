@@ -2,7 +2,6 @@
 
   * [快速开始](/zh-cn/quickstart.md)
   * [安装](/zh-cn/installation.md)
-  * [配置](/zh-cn/configuration.md)
   * [例子](/zh-cn/example.md)
 
 * 接口
