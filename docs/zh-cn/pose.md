@@ -20,7 +20,7 @@ char cfg_file[] = "../../model/pose/pose.cfg";
 char weight_file[] = "../../model/pose/pose.weights";
 char image_file[] = "../../model/pose/person.jpg";
 ```
-&nbsp;&nbsp; **coco.names** 文件是估计值的取值，如：******
+&nbsp;&nbsp; **coco.names** 文件是估计值的取值，如：******  
 &nbsp;&nbsp; **pose.cfg** 文件是所采用的深度神经网络的结构  
 &nbsp;&nbsp; **pose.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **person.jpg** 文件是您要姿态估计的图片
