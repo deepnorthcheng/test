@@ -1,7 +1,7 @@
 ## 人脸属性预测
 # 人脸属性预测
 
-### 这个例子展示了如何使用 Sunergy上训练好的深度神经网络进行人脸属性预测，如：年龄，性别，情绪等。本文以年龄预测为例。
+#### 这个例子展示了如何使用 Sunergy上训练好的深度神经网络进行人脸属性预测，如：年龄，性别，情绪等。本文以年龄预测为例。
 
 
 ## 在**Linux**上使用:
@@ -21,10 +21,10 @@
 	char weight_file[] = "../../model/classifier/age1.1.weights";
 	char image_file[] = "../../model/classifier/en.jpg";
 ```
-#### &nbsp;&nbsp; **age1.1.names** 文件所要预测属性的值，如本例中要预测年龄，则文件内容为年龄值 0，1，2，3 ... 100
-#### &nbsp;&nbsp; **age1.1.cfg** 文件是所采用的深度神经网络的结构
-#### &nbsp;&nbsp; **age1.1.weights** 文件是已训练好的权重
-#### &nbsp;&nbsp; **en.jpg** 文件是您需要预测人脸属性的图片
+ &nbsp;&nbsp; **age1.1.names** 文件所要预测属性的值，如本例中要预测年龄，则文件内容为年龄值 0，1，2，3 ... 100
+ &nbsp;&nbsp; **age1.1.cfg** 文件是所采用的深度神经网络的结构
+ &nbsp;&nbsp; **age1.1.weights** 文件是已训练好的权重
+ &nbsp;&nbsp; **en.jpg** 文件是您需要预测人脸属性的图片
 
 ### 3. 选择项目Sunergy，右击鼠标选择生成解决方案 .
 ### 4. 选择项目face_attribute_prediction，右击鼠标选择生成解决方案 .
