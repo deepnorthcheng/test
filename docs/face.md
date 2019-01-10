@@ -21,7 +21,7 @@ char image_file[] = "../../model/classifier/en.jpg";
 ```
 &nbsp;&nbsp;**age1.1.names** ---The value of the attribute to be predicted, as in this case,  age.  
 &nbsp;&nbsp;**age1.1.cfg** ---The structure of the deep neural network.  
-&nbsp;&nbsp;**age1.1.weights** ---Trained weight.
+&nbsp;&nbsp;**age1.1.weights** ---Trained weight.  
 &nbsp;&nbsp; **en.jpg** --- The image you want to predict
 
 #### 3. Do the: Build -> Build Sunergy.
