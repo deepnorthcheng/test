@@ -22,7 +22,7 @@ char weight_file[] = "../../model/detect/yolov3.weights";
 char image_file[] = "../../model/detect/dog.jpg";
 ```
 &nbsp;&nbsp; **coco.names** 文件是所要预测属性的值，如：bed,diningtable,toilet,tvmonitor,laptop,mouse,remote,eyboard 等。  
-bsp;&nbsp; **yolov3.cfg** 文件是所采用的深度神经网络的结构  
+&nbsp;&nbsp; **yolov3.cfg** 文件是所采用的深度神经网络的结构  
 &nbsp;&nbsp; **yolov3.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **dog.jpg** 文件是您需要目标检测的图片
 
