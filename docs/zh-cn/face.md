@@ -12,7 +12,7 @@
 ```C++
 char image_file[] = "../../model/classifier/en.jpg";
 ```
-####  &nbsp;&nbsp;&nbsp;检查以下三个文件是否在相应位置，名称是否与代码中一致 .
+####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
 
 ```C++
 char names[] = "../../model/classifier/age1.1.names";
@@ -20,17 +20,14 @@ char cfg_file[] = "../../model/classifier/age1.1.cfg";
 char weight_file[] = "../../model/classifier/age1.1.weights";
 char image_file[] = "../../model/classifier/en.jpg";
 ```
-&nbsp;&nbsp; **age1.1.names** 文件是所要预测属性的值，如本例中要预测年龄，则文件内容为年龄值 0，1，2，3 ... 100.  
-DDDD  
-DDD
-
-&nbsp;&nbsp; **age1.1.cfg** 文件是所采用的深度神经网络的结构
-&nbsp;&nbsp; **age1.1.weights** 文件是已训练好的权重
+&nbsp;&nbsp; **age1.1.names** 文件是所要预测属性的值，如本例中要预测年龄，则文件内容为年龄值 0，1，2，3 ... 100  
+&nbsp;&nbsp; **age1.1.cfg** 文件是所采用的深度神经网络的结构  
+&nbsp;&nbsp; **age1.1.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **en.jpg** 文件是您需要预测人脸属性的图片
 
 #### 3. 选择项目Sunergy，右击鼠标选择生成解决方案 .
 #### 4. 选择项目face_attribute_prediction，右击鼠标选择生成解决方案 .
-####  &nbsp;&nbsp;&nbsp;  再次右击鼠标将其设为启动项目，并运行 .
+####  &nbsp;&nbsp;&nbsp;&nbsp; 再次右击鼠标将其设为启动项目，并运行 .
 &nbsp;
 #### *参考代码:*  
 
