@@ -20,7 +20,7 @@ char cfg_file[] = "../../model/pose/pose.cfg";
 char weight_file[] = "../../model/pose/pose.weights";
 char image_file[] = "../../model/pose/person.jpg";
 ```
-&nbsp;&nbsp;**coco.names** --- Predicted value ？？？？   X
+&nbsp;&nbsp;**coco.names** --- Predicted value ？？？？   X  
 &nbsp;&nbsp;**pose.cfg** --- The structure of the deep neural network.  
 &nbsp;&nbsp;**pose.weights** --- Trained weight.  
 &nbsp;&nbsp;**person.jpg** --- The image you want to estimation.
@@ -29,4 +29,4 @@ char image_file[] = "../../model/pose/person.jpg";
 #### 4. Do the: Build -> Build pose_estimation. 
 ####  &nbsp;&nbsp;&nbsp;&nbsp;Set *pose_estimation* as the startup project and run it.
 &nbsp;
-#### Code:
+#### *Code:*
