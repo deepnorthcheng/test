@@ -27,7 +27,7 @@ char image_file[] = "../../model/pose/person.jpg";
 
 #### 3. 选择项目Sunergy，右击鼠标选择生成解决方案 .
 #### 4. 选择项目pose_estimation，右击鼠标选择生成解决方案 .
-####  &nbsp;&nbsp;&nbsp; 再次右击鼠标将其设为启动项目，并运行 .
+####  &nbsp;&nbsp;&nbsp;&nbsp; 再次右击鼠标将其设为启动项目，并运行 .
 &nbsp;
 #### *参考代码:*  
 
