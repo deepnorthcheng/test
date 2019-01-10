@@ -1,8 +1,6 @@
-﻿#人脸属性预测
-
+#人脸属性预测
 
 这个例子展示了如何使用 Sunergy上训练好的深度神经网络进行人脸属性预测，如：年龄，性别，情绪等。本文以年龄预测为例。
-
 
 ## 在**Linux**上使用:
 ## 在 **Windows**上使用:  &nbsp;
@@ -10,12 +8,12 @@
 #### 1. 启动MSVS, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Debug/Release .
 
 #### 2. 将你需要预测的图片重命名并放入路径：  "../../model/classifier/en.jpg".
-```python
+```C++
 	char image_file[] = "../../model/classifier/en.jpg";
 ```
 ####  &nbsp;&nbsp;&nbsp;检查以下三个文件是否在相应位置，名称是否与代码中一致 .
 
-```python
+```C++
     char names[] = "../../model/classifier/age1.1.names";
 	char cfg_file[] = "../../model/classifier/age1.1.cfg";
 	char weight_file[] = "../../model/classifier/age1.1.weights";
