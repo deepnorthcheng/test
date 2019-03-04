@@ -119,7 +119,7 @@ int main(int argc, char** argv)
 	{
 		printf("%d", i); 
 		printf("%s", out[i].names);
-		printf("%f\n", out[i].confident);					//add it?
+		printf("%f\n", out[i].confident);					
 	}
 
 	show_image(image_file, &out);
