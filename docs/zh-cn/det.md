@@ -31,7 +31,8 @@ char image_file[] = "../../model/detect/dog.jpg";
 ####  &nbsp;&nbsp;&nbsp;&nbsp; 再次右击鼠标将其设为启动项目，并运行 .
 &nbsp;
 #### *参考代码:*  
-'''c++
+
+```C++
 #include "Sunergy.h"
 #include <stdio.h>
 #ifdef _WIN32
@@ -61,7 +62,7 @@ void set_data(char* file, sunergy_data_t* data)
 	data->data = src->imageData;
 }
 
-void show_image_dete(char* file, detect_out_t* out)					//@lyh
+void show_image_dete(char* file, detect_out_t* out)					
 {
 	IplImage* src = cvLoadImage(file, 1);
 	cvNamedWindow("detect", CV_WINDOW_AUTOSIZE);
@@ -113,5 +114,4 @@ int main(int argc, char** argv)
 	system("pause");								   
 }
 
-
-'''
+```
