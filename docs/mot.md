@@ -6,9 +6,10 @@ This example shows how to use the deep neural network models which trained on Su
 
 #### 1. Start MSVS, open tracking.sln , set x64 and Release.
 
-#### 2. Rename the image you want to do object detection and put it in this path："../../model/detect/dog.jpg"
+#### 2. Modify *MOTDIR* to the path of the video you want to do multi-object tracking.
+
 ```C++
-        char image_file[] = "../../model/detect/dog.jpg";
+        #define MOTDIR "D:/flora/Sunergy-master/Sunergy-master/example/model/tracking/MOT16/test/MOT16-06/"
 ```
 
 #### 3. Do the: Build -> Build tracking.
