@@ -4,7 +4,7 @@ This example shows how to use the deep neural network models which trained on Su
 ## How to use on **Linux**:
 ## How to use on **Windows**:
 
-#### 1. Start MSVS, open Sunergy.sln, set x64 and Debug/Release.
+#### 1. Start MSVS, open Sunergy.sln, set x64 and Release.
 
 #### 2. Rename the image you want to predict and put it in this path："../../model/classifier/en.jpg"
 ```C++
@@ -118,7 +118,7 @@ int main(int argc, char** argv)
 	{
 		printf("%d", i); 
 		printf("%s", out[i].names);
-		printf("%f\n", out[i].confident);					//add it?
+		printf("%f\n", out[i].confident);					
 	}
 
 	show_image(image_file, &out);
