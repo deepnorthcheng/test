@@ -6,7 +6,7 @@
 ## 在**Linux**上使用:
 ## 在 **Windows**上使用:  &nbsp;
 
-#### 1. 启动MSVS, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Debug/Release .
+#### 1. 启动MSVS, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Release .
 
 #### 2. 将你需要预测的图片重命名并放入路径：  "../../model/classifier/en.jpg".
 ```C++
