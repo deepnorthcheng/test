@@ -8,7 +8,7 @@ This example shows how to use the deep neural network models which trained on Su
 
 #### 2. Rename the image you want to do object detection and put it in this path："../../model/detect/dog.jpg"
 ```C++
-char image_file[] = "../../model/detect/dog.jpg";
+        char image_file[] = "../../model/detect/dog.jpg";
 ```
 #### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
 
