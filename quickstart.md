@@ -1,0 +1,114 @@
+## Quick start
+
+-----
+
+## Linux
+
+### 1 Install necessary dependency Libraries
+```bash
+sudo apt-get install git
+sudo apt-get install python-pip
+sudo apt-get install python-dev
+sudo apt-get install python-numpy
+pip install opencv-python
+```
+
+### 2 Check GPU environmental
+
+If you do not use GPU environment, please skip
+
+* [Check GPU Driver Installation](gpu_driver.md)<br>
+* [Check CUDA environment](cuda8.0&cudnnv6.md)<br>
+
+### 3 Clone sunergy source from github
+```bash
+https://github.com/DeepNorthAI/Sunergy_multiPlatform
+```
+
+
+
+Go to Sunergy and download yolo-v3 model
+
+```bash
+
+cd Sunergy_multiPlatform/Sunergy/
+wget -P model/ https://pjreddie.com/media/files/yolov3.weights
+```
+
+### 4 Compile sunergy
+Modify Makefile
+```bash
+gedit Makefile
+```
+
+Modify Makefile macro definition according to computer requirement
+Use 1 and does not use 0, python_verson 2 or 3 corresponds to 2.7 and 3.5, respectively.
+```bash
+GPU=1
+CUDNN=1
+OPENCV=0
+OPENMP=1
+DEBUG=0
+PYTHON=1
+LIBPATH=1
+TESTTIME=0
+NNPACK=0
+PYTHON_VERSON=2
+```
+
+Save exit and compile
+```bash
+make clean
+make
+```
+
+### 5 Test sunergy
+
+Execute yolov3 demo to detect dogs
+
+```bash
+python test.py
+```
+![http://yicun.vmaxx.tech:3000/mingzhe_pan/sunergy_multiplatform/src/master/docs/screenshot/dog.png](https://github.com/DeepNorthAI/Sunergy_multiPlatform/tree/master/docs/screenshot/dog.png)
+
+-----
+
+## Windows
+
+### 1 IDE Environment
+* VS2015
+
+### 2 GPU Environment
+Please refer to [here](cuda-windows.md) to see the GPU environment Installation in Windows .
+* CUDA8.0
+* CuDNN6.0
+
+### 3 Download the Code  
+The folder includes four examples: object detection, face attribute prediction, pose estimation and tracking.
+```bash
+git clone https://github.com/VMaxxInc/Sunergy_multiPlatform.git
+或者
+git clone http://yicun.vmaxx.tech:3000/mingzhe_pan/sunergy_github.git
+
+```
+
+### 4 Open the Projects
+#### 4.1 object detection/face attribute prediction/pose estimation
+   * Start VS2015, open project Sunergy.sln .
+
+#### 4.2 multi-object tracking
+   * Start VS2015, open project example/c/tracking/tracking.sln .
+
+### 5 Build and Run
+
+#### 5.1 object_detection/face_attribute_prediction/pose_estimation
+* choose sunergy, right-click and choose build .
+* choose object detection/face attribute prediction/pose estimation, right-click and choose build .
+* choose object detection/face attribute prediction/pose estimation, right-click and choose set as startup item, and then press F5 to run .
+
+#### 5.2 tracking
+* choose tracking, right-click and choose build .
+* choose tracking, right-click and choose set as startup item, and then press F5 to run .
+
+## 6 PS
+* Please refer to [Examples](examples.md) to see the detailed information about project configuration .
