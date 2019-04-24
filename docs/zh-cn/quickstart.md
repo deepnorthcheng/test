@@ -81,7 +81,7 @@ Windows下GPU环境安装请参考 [这里](/zh-cn/cuda-windows.md)
 * CuDNN6.0
 
 ### 3 下载代码
-文件夹中包括opencv,sunergy库,以及四个例子：目标检测, 人脸属性预测, 位姿识别, 行人追踪
+文件夹中四个例子：目标检测, 人脸属性预测, 位姿识别, 行人追踪
 ```bash
 git clone https://github.com/VMaxxInc/Sunergy_multiPlatform.git
 或者
@@ -91,22 +91,22 @@ git clone http://yicun.vmaxx.tech:3000/mingzhe_pan/sunergy_github.git
 
 ### 4 打开项目
 #### 4.1 项目：目标检测, 人脸属性预测, 位姿识别
-   * 运行VS2015,打开项目Sunergy.sln .
+   * 运行VS2015, 打开项目Sunergy.sln .
 
 #### 4.2 项目：行人追踪
-   * 运行VS2015,打开项目example/c/tracking/tracking.sln .
+   * 运行VS2015, 打开项目example/c/tracking/tracking.sln .
 
 
 ### 5 生成解决方案及运行
 
 #### 5.1 项目：目标检测, 人脸属性预测, 位姿识别
-* 选择项目sunergy,右击鼠标选择生成解决方案 .
-* 选择项目object detection/face attribute prediction/pose estimation,右击鼠标选择生成解决方案 .
-* 选择项目object detection/face attribute prediction/pose estimation,右击鼠标选择设为启动项,F5执行 .
+* 选择项目sunergy, 右击鼠标选择生成解决方案 .
+* 选择项目object detection/face attribute prediction/pose estimation, 右击鼠标选择生成解决方案 .
+* 选择项目object detection/face attribute prediction/pose estimation, 右击鼠标选择设为启动项,F5执行 .
 
 #### 5.2 项目：行人追踪
-* 选择项目tracking,右击鼠标选择生成解决方案 .
-* 选择项目tracking,右击鼠标选择设为启动项,F5执行 .
+* 选择项目tracking, 右击鼠标选择生成解决方案 .
+* 选择项目tracking, 右击鼠标选择设为启动项,F5执行 .
 
 ### 6 附
 * 具体项目配置信息参考 [例子](/zh-cn/example.md)
