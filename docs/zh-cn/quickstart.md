@@ -21,7 +21,7 @@ pip install opencv-python
 
 
 ### 3 从github克隆sunergy源代码
-文件夹中包含五个例子：目标检测, 人脸属性预测, 姿态估计, 跨摄像头重识别和多目标追踪
+文件夹中包含五个例子：目标检测, 人脸属性预测, 姿态估计, 跨摄像头重识别和多目标跟踪
 
 ```bash
 https://github.com/DeepNorthAI/Sunergy_multiPlatform
@@ -81,7 +81,7 @@ python demo.py
 
 
 ### 3 从github克隆sunergy源代码
-文件夹中包含五个例子：目标检测, 人脸属性预测, 姿态估计, 跨摄像头重识别和多目标追踪
+文件夹中包含五个例子：目标检测, 人脸属性预测, 姿态估计, 跨摄像头重识别和多目标跟踪
 ```bash
 https://github.com/DeepNorthAI/Sunergy_multiPlatform
 ```
@@ -90,7 +90,7 @@ https://github.com/DeepNorthAI/Sunergy_multiPlatform
 #### 4.1 项目：目标检测, 人脸属性预测, 姿态估计, 跨摄像头重识别
    * 运行VS2015, 打开项目Sunergy.sln .
 
-#### 4.2 项目：多目标追踪
+#### 4.2 项目：多目标跟踪
    * 运行VS2015, 打开项目example/c/tracking/tracking.sln .
 
 
@@ -103,7 +103,7 @@ https://github.com/DeepNorthAI/Sunergy_multiPlatform
 
 *注：这四个例子的运行方式均如上文所述，不同的例子对应于不同的项目*
 
-#### 5.2 项目：行人追踪
+#### 5.2 项目：多目标跟踪
 * 选择项目tracking, 右击鼠标选择生成解决方案 .
 * 选择项目tracking, 右击鼠标选择设为启动项, F5执行 .
 
