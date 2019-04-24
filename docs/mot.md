@@ -1,58 +1,63 @@
-## Multi-object tracking
+## 多目标跟踪
 
-This example shows how to use the deep neural network models which trained on Sunergy to do Multi-object tracking.
-## How to use on **Linux**:
+这个例子展示了如何使用Sunergy上训练好的深度神经网络对视频进行多目标跟踪.
 
-#### 1. Copy the libsunergy.so file in lib/linux to the folder where the multi-object tracking program locates
+-------------
+
+## 在**Linux**上使用:
+
+#### 1. 将 lib/linux 中的libsunergy.so文件拷贝至多目标追踪程序所在文件夹
 
 ```pyhton
 cp -i lib/linux/libsunergy.so example/python/multi-object_tracking
 ```
 
-#### 2. Enter the folder where the multi-object tracking program locates
+#### 2. 进入多目标追踪程序所在文件夹
 
 ```python
 cd example/python/multi-object_tracking
 ```
 
-#### 3. Modify the MOTDIR to the path of object detection result and image_file to the path of the video picture
+#### 3. 修改目标检测结果所在路径MOTDIR, 以及视频图片所在路径image_file
 ```python
 MOTDIR ="../../model/tracking/MOT16/test/MOT16-06/det/"
 image_file = "../../model/tracking/MOT16/test/MOT16-06/img1/"
 ```
 
-#### 4. Run
+#### 4. 运行程序
 
 ```python
 python multi-object_tracking.py
 ```
 
+---------------
 
+## 在 **Windows**上使用: 
 
+### C程序 
 
-## How to use on **Windows**:
+#### 1. 启动MSVS, 打开项目 example/c/tracking/tracking.sln, 解决方案配置选择 x64 和 Release .
 
-### C
-
-#### 1. Start MSVS, open example/c/tracking/tracking.sln , set x64 and Release.
-
-#### 2. Modify *MOTDIR* to the path of the video you want to do multi-object tracking.
+#### 2. 在 main 函数中如下代码处，修改 MOTDIR 为你需要进行多目标跟踪的视频的路径.
 
 ```C++
-        #define MOTDIR "../../../model/tracking/MOT16/test/MOT16-06/"
+#define MOTDIR "../../../model/tracking/MOT16/test/MOT16-06/"
 ```
+#### 3. 选择项目tracking，右击鼠标选择生成解决方案 .
+#### 4. 再次右击鼠标将其设为启动项目，并运行 .
 
-#### 3. Do the: Build -> Build tracking.
-#### 4. Set *tracking* as the startup project and run it.
+
+---------------
 
 &nbsp;
-#### Code:
+#### *参考代码:*  
 
 #### C++
+
 ```C++
 #include "stdlib.h"
 #include "string.h"
-#include <opencv2/core.hpp>  //<highgui.h>
+#include <opencv2/core.hpp> 
 #include <opencv2/highgui.hpp>
 #include <iostream>
 #include <vector>
@@ -66,12 +71,9 @@ extern "C"
 	#include "tracker.h" 
 	extern Track tracks[1024];
 };
-
-//
-#define MOTDIR "D:/flora/Sunergy-master/Sunergy-master/example/model/tracking/MOT16/test/MOT16-06/"
-
+//set MOTDIR as your video address
+#define MOTDIR "../../../model/tracking/MOT16/test/MOT16-06/"
 #define RUNGT
-
 using namespace std;
 
 int main()
@@ -92,7 +94,8 @@ int main()
 	char sstr[20];
 	char ssd[20];
 	char image_file[100];
-	std::vector<int> del_object_id;	
+	std::vector<int> del_object_id;
+	
 	CvFont font;
 	cvInitFont(&font, CV_FONT_HERSHEY_PLAIN, 0.5, 1.0, 0);
 	ModelDetection* M = NULL;
@@ -148,11 +151,11 @@ int main()
 					continue;				
 				}		
 				cvRectangle(src, cvPoint((out->track_box)[i].up_left_x, (out->track_box)[i].up_left_y), 
-					cvPoint((out->track_box)[i].up_left_x+(out->track_box)[i].box_w, (out->track_box)[i].up_left_y + (out->track_box)[i].box_h),
+			    cvPoint((out->track_box)[i].up_left_x+(out->track_box)[i].box_w, (out->track_box)[i].up_left_y + (out->track_box)[i].box_h),
 					cvScalar(0, 255, 0, 0), 1, 4, 0);	
 				sprintf(sstr, "%d", out->track_id[i]);		
 				cvPutText(src, sstr, cvPoint((out->track_box)[i].up_left_x, (out->track_box)[i].up_left_y), &font, CV_RGB(0,255, 0));	
-			}	
+			}
 			cvShowImage("tracking", src);
 			cvWaitKey(300);
 			cvReleaseImage(&src);
