@@ -1,13 +1,17 @@
 ## Installation
 
 Prior to installing, have a glance through this guide and take note of the details for your platform.
-We install and run Sunergy on Ubuntu 16.04–12.04.
+We install and run Sunergy on Ubuntu 16.04–12.04 and Windows10 .
 
-**Step-by-step Instructions**:
+-----
+
+## Linux
+
+## 1 Platform
 
 - [Ubuntu installation](https://www.ubuntu.com/download/desktop) *the standard platform*
 
-**Overview**:
+## 2 Overview
 
 - [Prerequisites](#prerequisites)
 - [Compilation](#compilation)
@@ -15,7 +19,7 @@ We install and run Sunergy on Ubuntu 16.04–12.04.
 
 When updating Sunergy, it's best to `make clean` before re-compiling.
 
-## Prerequisites
+### **Prerequisites**
 
 Sunergy has several dependencies:
 
@@ -39,7 +43,7 @@ Pysunergy interfaces have their own natural needs.
 
 **CPU-only Sunergy**: for cold-brewed CPU-only Sunergy uncomment the `GPU :=0 CUDNN := 0` flag in `MakefilE` to configure and build Sunergy without CUDA. This is helpful for cloud or cluster deployment.
 
-### CUDA and CUDNN
+#### CUDA and CUDNN
 
 Sunergy requires the CUDA `nvcc` compiler to compile its GPU code and CUDA driver for GPU operation.
 To install CUDA, go to the [NVIDIA CUDA website](https://developer.nvidia.com/cuda-downloads) and follow installation instructions there. Install the library and the latest standalone driver separately; the driver bundled with the library is usually out-of-date. **Warning!** The 331.* CUDA driver series has a critical performance issue: do not use it.
@@ -47,7 +51,7 @@ To install CUDA, go to the [NVIDIA CUDA website](https://developer.nvidia.com/cu
 For best performance, Sunergy can be accelerated by [NVIDIA cuDNN](https://developer.nvidia.com/cudnn). Register for free at the cuDNN site, install it, then continue with these installation instructions.
 
 
-### Python
+#### Python
 
 You can install the dependencies with
 
@@ -58,11 +62,11 @@ but we suggest first installing the [Anaconda](https://store.continuum.io/cshop/
 *Sunergy's Python interface works with Python 2.7. Python 3.3+ should work out of the box without protobuf support. For protobuf support please install protobuf 3.0 alpha (https://developers.google.com/protocol-buffers/). Earlier Pythons are your own adventure.*
 
 
-## Compilation
+### **Compilation**
 
 Sunergy can be compiled with Make. 
 
-### Compilation with Make
+* Compilation with Make
 
 Configure the build by copying and modifying the example `Makefile` for your setup. The defaults should work.
 
@@ -76,4 +80,21 @@ Configure the build by copying and modifying the example `Makefile` for your set
 
 Now that you have installed Sunergy.
 
+-----
 
+## Windows10
+
+## 1 Platform
+* install and run Sunergy on Windows10
+
+## 2 IDE Environment
+* Visual Studio  
+   * Click [here](https://visualstudio.microsoft.com/zh-hans/downloads/) to download  
+   * CUDA 8.0 does not support VS2017, so VS2015 is recommended
+   * Visual Studio should be installed before installing GPU environment
+  
+## 3 Prerequisites
+* [CUDA](https://developer.nvidia.com/cuda-downloads) is required for GPU mode  
+  * library version 8+ and the latest driver version are recommended   
+* [CuDNN](https://developer.nvidia.com/rdp/cudnn-download) is an accelerator package  
+  * library version 6+ and the latest driver version are recommended
