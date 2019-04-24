@@ -4,18 +4,51 @@
 
 
 ## 在**Linux**上使用:
-## 在 **Windows**上使用:  &nbsp;
 
-#### 1. 启动MSVS, 打开项目 tracking.sln, 解决方案配置选择 x64 和 Release .
+#### 1. 将 lib/linux 中的libsunergy.so文件拷贝至多目标追踪程序所在文件夹
+
+```pyhton
+cp -i lib/linux/libsunergy.so example/python/multi-object_tracking
+```
+
+#### 2. 进入多目标追踪程序所在文件夹
+
+```python
+cd example/python/multi-object_tracking
+```
+
+#### 3. 修改目标检测结果所在路径MOTDIR, 以及视频图片所在路径image_file
+```python
+MOTDIR ="../../model/tracking/MOT16/test/MOT16-06/det/"
+image_file = "../../model/tracking/MOT16/test/MOT16-06/img1/"
+```
+
+#### 4. 运行程序
+
+```python
+python multi-object_tracking.py
+```
+
+
+## 在 **Windows**上使用: 
+
+### C程序 
+
+#### 1. 启动MSVS, 打开项目 example/c/tracking/tracking.sln, 解决方案配置选择 x64 和 Release .
 
 #### 2. 在 main 函数中如下代码处，修改 MOTDIR 为你需要进行多目标跟踪的视频的路径.
+
 ```C++
-#define MOTDIR "D:/flora/Sunergy-master/Sunergy-master/example/model/tracking/MOT16/test/MOT16-06/"
+#define MOTDIR "../../../model/tracking/MOT16/test/MOT16-06/"
 ```
 #### 3. 选择项目tracking，右击鼠标选择生成解决方案 .
 #### 4. 再次右击鼠标将其设为启动项目，并运行 .
+
+
 &nbsp;
 #### *参考代码:*  
+
+#### C++
 
 ```C++
 #include "stdlib.h"
@@ -35,7 +68,7 @@ extern "C"
 	extern Track tracks[1024];
 };
 //set MOTDIR as your video address
-#define MOTDIR "D:/flora/Sunergy-master/Sunergy-master/example/model/tracking/MOT16/test/MOT16-06/"
+#define MOTDIR "../../../model/tracking/MOT16/test/MOT16-06/"
 #define RUNGT
 using namespace std;
 
@@ -129,4 +162,109 @@ int main()
 	system("pause");
 	return 0;
 }
+
+```
+
+
+#### python
+
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import libsunergy as libtrack
+import numpy as np
+import cv2
+def deepsort():
+    MOTDIR ="../../model/tracking/MOT16/test/MOT16-06/det/"
+
+    min_frame_idx = 1;
+    max_frame_idx = 1194;
+
+    init_para = []
+    list1 = init_para
+    dic1 = dict()
+    dic1.setdefault("nn_budget",100)
+    dic1.setdefault("max_feat_distance", 0.2)
+    dic1.setdefault("dete_threshold", 0.3)
+    dic1.setdefault("nms_max_overlap", 1.0)
+    dic1.setdefault("max_distance", 0.7)
+    dic1.setdefault("metric", 2)
+    dic1.setdefault("max_age", 30)
+    dic1.setdefault("n_init", 3)
+    dic1.setdefault("kalman_weight_velocity", 1./160)
+    list1.append(dic1)
+    track_handle = libtrack.track_init(init_para)
+
+    with open(MOTDIR+'det.txt','r') as f:
+        lines = f.readlines()
+    track_data = [[]]
+    frame_id = 1
+    objid=0
+    k  = 0
+    for line in lines:
+        line = line.split(',')
+
+        if int(line[0]) > frame_id:
+            objid=0
+        track_data.append([])
+        list_ = track_data[int(line[0])]
+        dic = dict()
+        dic.setdefault("leftx",float(line[2]))
+        dic.setdefault("width", float(line[4]))
+        dic.setdefault("lefty", float(line[3]))
+        dic.setdefault("height", float(line[5]))
+        dic.setdefault("confident", float(line[6]))
+        dic.setdefault("objindex", objid)
+        dic.setdefault("frameidx", float(line[0]))
+        dic.setdefault("timestamp", "00:00:00")
+        dic.setdefault("feature", np.zeros(128, np.float32))
+        for j in range(0,128):
+            dic['feature'][j] = float(line[6])
+        objid+=1
+        #line_num=1
+        list_.append(dic)
+        k += 1
+
+    for i in range(1,max_frame_idx):
+
+        input = track_data[i]
+        
+        output = libtrack.track_run(track_handle,input)
+
+        image_file = "../../model/tracking/MOT16/test/MOT16-06/img1/%06d.jpg" % i
+        image = cv2.imread(image_file)
+        print(output)
+        for key0 in output.keys():
+            for key1 in output[key0].keys():
+                if (int(output[key0][key1]['state'])) != 2 or (int(output[key0][key1]['update_times'])) > 0:
+                    continue               
+                #cv2.rectangle(image, int(output[key0][key1]['track_box'][0]), int(output[key0][key1]['track_box'][1]), int output[key0][key1]['track_box'][0] + int(output[key0][key1]['track_box'][2]), int(output[key0][key1]['track_box'][1]) + int(output[key0][key1]['track_box'[3]], (255,255,0), 2)
+                cv2.rectangle(image, (int(output[key0][key1]['track_box'][0]), int(output[key0][key1]['track_box'][1])), (int(output[key0][key1]['track_box'][0])+int(output[key0][key1]['track_box'][2]), int(output[key0][key1]['track_box'][1])+int(output[key0][key1]['track_box'][3])), (255,255,0), 2)
+                a = str(key0)
+                cv2.putText(image, a, (int(output[key0][key1]['track_box'][0]), int(output[key0][key1]['track_box'][1])), 0, 0.8, (255, 255, 0), 2)
+                #cv2.rectangle(image, (int(output[key0][key1]['det_box'][0]), int(output[key0][key1]['det_box'][1])), (int(output[key0][key1]['det_box'][0])+int(output[key0][key1]['det_box'][2]), int(output[key0][key1]['det_box'][1])+int(output[key0][key1]['det_box'][3])), (0,0,255), 2)
+
+           # a = str(track['DeteID'])
+                #cv2.putText(image, a, ((int(track['X']), int(track['Y']))), 0, 0.8, (0, 0, 255), 2)
+        size = len(input)
+        print(size)
+        for det in range(size):            
+            cv2.rectangle(image, (int(input[det]['leftx']), int(input[det]['lefty'])), (int(input[det]['leftx'])+int(input[det]['width']), \
+            int(input[det]['lefty'])+int(input[det]['height'])), (0,0,255), 2)
+        cv2.imshow("tracking",image)
+        cv2.waitKey(100)
+            #print output
+            #print(output)
+    libtrack.track_uninit(track_handle)
+
+
+
+
+
+if __name__ == "__main__":
+    #openpose()
+   # detect()
+    #extract()
+    deepsort()
+	
 ```
