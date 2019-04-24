@@ -2,7 +2,47 @@
 
 This example shows how to use the deep neural network models which trained on Sunergy to do object detection.
 ## How to use on **Linux**:
-## How to use on **Windows**:
+
+#### 1. Open Terminal and enter make. Then copy the libsunergy.so file in lib/linux to the folder where the object detection program locates.
+
+```pyhton
+cp -i lib/linux/libsunergy.so example/python/object_detection
+```
+
+#### 2. Enter the folder where the object detection program locates.
+
+```python
+cd example/python/object_detection
+```
+
+#### 3. Rename the image you want to do object detection and put it in this path："../../model/detect/dog.jpg"
+```python
+        char image_file[] = "../../model/detect/dog.jpg";
+```
+#### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
+
+
+```python
+	char names[] = "../../model/detect/coco.names";
+	char cfg_file[] = "../../model/detect/yolov3.cfg";
+	char weight_file[] = "../../model/detect/yolov3.weights";
+	char image_file[] = "../../model/detect/dog.jpg";
+```
+&nbsp;&nbsp;**coco.names** ---The name of object detection's result can be, such as: dog, car...  
+&nbsp;&nbsp;**yolov3.cfg** ---The structure of the deep neural network.  
+&nbsp;&nbsp;**yolov3.weights** ---Trained weight.  
+&nbsp;&nbsp; **dog.jpg** --- The image you want to do object detection
+
+#### 4. Run
+
+```python
+python object_detection.py
+```
+
+
+## How to use on **Windows**: 
+
+### C
 
 #### 1. Start MSVS, open Sunergy.sln, set x64 and Release.
 
@@ -19,17 +59,42 @@ This example shows how to use the deep neural network models which trained on Su
 	char weight_file[] = "../../model/detect/yolov3.weights";
 	char image_file[] = "../../model/detect/dog.jpg";
 ```
-&nbsp;&nbsp;**age1.1.names** ---The name of object detection's result can be, such as: dog, car...
-&nbsp;&nbsp;**age1.1.cfg** ---The structure of the deep neural network.  
-&nbsp;&nbsp;**age1.1.weights** ---Trained weight.  
-&nbsp;&nbsp; **en.jpg** --- The image you want to do object detection
 
-#### 3. Do the: Build -> Build Sunergy.
-#### 4. Do the: Build -> Build object_detection. 
+&nbsp;&nbsp;**coco.names** ---The name of object detection's result can be, such as: dog, car...  
+&nbsp;&nbsp;**yolov3.cfg** ---The structure of the deep neural network.  
+&nbsp;&nbsp;**yolov3.weights** ---Trained weight.  
+&nbsp;&nbsp; **dog.jpg** --- The image you want to do object detection
+
+#### 3. Choose project sunergy, Do the: Property -> Configuration type -> Static Library(.lib), then Do the: Build -> Build Sunergy.
+#### 4. Choose project object_detection, Do the: Build -> Build object_detection. 
 ####  &nbsp;&nbsp;&nbsp;&nbsp;Set *object_detection* as the startup project and run it.
+
+### python
+
+#### 1. Start MSVS, open Sunergy.sln, set x64 and Release.
+#### 2. Choose project sunergy, Do the: Property -> Configuration type -> Dynamic Library(.lib), then Do the: Build -> Build Sunergy.
+#### 3. Copy the libsunergy.dll in lib/windows to the folder example/python/object_detection, and rename it as libsunergy.pyd.
+#### 4. Check the if the files' locations are consistent with the path in object_detection.py.
+
+```python
+"../../model/detect/coco.names"
+"../../model/detect/yolov3.cfg"
+"../../model/detect/yolov3.weights"
+"../../model/detect/dog.jpg"
+```
+
+&nbsp;&nbsp;**coco.names** ---The name of object detection's result can be, such as: dog, car...  
+&nbsp;&nbsp;**yolov3.cfg** ---The structure of the deep neural network.  
+&nbsp;&nbsp;**yolov3.weights** ---Trained weight.  
+&nbsp;&nbsp; **dog.jpg** --- The image you want to do object detection
+
+#### 5. Open command line and enter the path example/python/object_detection, enter python object_detection.py and run it.
+
+
 &nbsp;
 #### Code:
 
+#### C++
 ```C++
 #include "Sunergy.h"
 #include <stdio.h>
@@ -42,6 +107,7 @@ This example shows how to use the deep neural network models which trained on Su
 
 #include "opencv2/highgui/highgui_c.h"
 #include "opencv2/imgproc/imgproc_c.h"
+
 
 void set_data(char* file, sunergy_data_t* data)
 {
@@ -59,6 +125,7 @@ void set_data(char* file, sunergy_data_t* data)
 	data->data = src->imageData;
 }
 
+	 
 void show_image_dete(char* file, detect_out_t* out)
 {
 	IplImage* src = cvLoadImage(file, 1);
@@ -66,13 +133,14 @@ void show_image_dete(char* file, detect_out_t* out)
 	CvPoint lt,rb;
 	CvScalar color;
 	for (int i = 0; i < out->total_num;i++)
-		cvRectangle(src, cvPoint(out->info[i].left*src->width, out->info[i].top*src->height),
-		cvPoint(out->info[i].right*src->width, out->info[i].bottom*src->height), cvScalar(255, 0, 0, 0), 3, 4, 0);
+		cvRectangle(src, cvPoint(out->info[i].left, out->info[i].top),
+		cvPoint(out->info[i].right, out->info[i].bottom), cvScalar(255, 0, 0, 0), 3, 4, 0);
 	cvShowImage("detect", src);
 	cvWaitKey(0);
 	cvReleaseImage(&src);
 	cvDestroyWindow("detect");	
 }
+
 
 int main(int argc, char** argv)
 {
@@ -98,7 +166,7 @@ int main(int argc, char** argv)
 	net_information_t info;
 	sunergy_t sun = sunergy_init(names, cfg_file, weight_file, gpuid, inference);
 	sunergy_get_network_infomation(sun, 1, &info);
-	set_sunergy_param(sun, 0, 0, 255, 0.25);
+	set_sunergy_param(sun, 0, 0, 255, 0.25, 768, 576, 1);
 	set_data(image_file, &data);
 	printf("start\n");
 
@@ -112,4 +180,81 @@ int main(int argc, char** argv)
 
 	system("pause");
 }
+
+
 ```
+
+#### python
+```python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import libsunergy as sun
+import cv2
+import time
+import numpy as np
+np.set_printoptions(threshold=np.inf)
+#np.set_printoptions(16, suppress=True)
+
+def draw_box(image,result):
+    width = image.shape[1]
+    height = image.shape[0]
+
+    for obj in result:
+        conf = obj['confident']
+        if conf > 0:
+            point1 = (int(obj['left']), int(obj['top']))
+            point2 = (int(obj['right']), int(obj['bottom']))
+            print point1, point2
+            cv2.rectangle(image, point1, point2, (255, 0, 0), 2)
+
+
+def detect():
+    net1 = sun.init("../../model/detect/coco.names",#names file
+             "../../model/detect/yolov3.cfg",#cfg file
+             "../../model/detect/yolov3.weights")#weight file
+    net = net1[0]['index']
+    nms=0.4 #param of detect
+    means=0 # image reduce means before run in network
+    normalization=255 #image normalization coefficient
+    threshold=0.24#detect threshold
+    video_w= 768#image real width used by detect and pose
+    video_h=576#image real height used by detect and pose
+    resize_format = 0 # 0: darknet 1: opencv 2:caffe
+    depth = sun.get_depth(net)
+    print depth
+    net_info = sun.get_net_info(net,1)
+    print net_info
+    sun.set_param(net,nms,means,normalization,threshold,video_w,video_h, 1)
+
+    frame1 = cv2.imread('../../model/detect/dog.jpg')
+    cfg_size = (864, 864)
+    frame = cv2.resize(frame1, cfg_size)
+    #print frame
+    img={"width":frame.shape[1],#image width
+         'height':frame.shape[0],#image height
+         'step':frame.shape[2]*frame.shape[1],#image step
+         'channel':frame.shape[2],#image channel
+         'batch':1,#image batch
+         'location':0,#location of image data 0:CPU 1:GPU
+         'preprocessing':0,#image data run in network directly,0:image with no preprocessing 1: image have preprocessed
+         'format':1,#format of image data 0:RGB 1:BGR 2: RGP 3:BGRP
+         'type':1,#type of image data 0: char 1: float
+        'data':frame.data}#image data
+    
+    t0=time.time()
+    ret = sun.detect(net,img)
+    t1 = time.time()
+    print ret
+    print str(t1-t0)
+    draw_box(frame1, ret)
+    cv2.imshow("detection",frame1)
+    cv2.waitKey(0) 
+    sun.free(net)
+
+
+if __name__ == "__main__":   
+   detect()
+
+
+```
+
