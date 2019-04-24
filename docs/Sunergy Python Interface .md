@@ -178,37 +178,3 @@ out:
 <output>list-python about feature result
 ```
 
-
-
-## Records
-
-Version | Data | Author | Notes
----|--- | --- | ---
-1.0.0 | 2018.8.16 | Mingzhe Pan | Original version
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

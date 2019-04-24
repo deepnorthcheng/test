@@ -1,41 +1,46 @@
 ## Face attribute prediction
 
-This example shows how to use the deep neural network models which trained on Sunergy to predict face attributes such as age, gender, and mood. Here we take the age prediction as an example.
+This example shows how to use the deep learning models to predict face attributes such as age, gender, and mood. Here we take the age prediction as an example.
 
 ------
 
 ## How to use on **Linux**:
 
-#### 1. Open Terminal and enter make. Then copy the libsunergy.so file in lib/linux to the folder where the face attributes prediction program locates
+#### 1. Go to Sunergy and compile
+```python
+cd Sunergy
+make
+```
+
+#### 2. Copy libsunergy.so to the face attributes predict folder .
 
 ```pyhton
 cp -i lib/linux/libsunergy.so example/python/face_attribute_prediction
 ```
 
-#### 2. Enter the folder where the face attributes prediction program locates
+#### 3. Enter the face attributes prediction folder .
 
 ```python
 cd example/python/face_attribute_prediction
 ```
 
-#### 3. Rename the image you want to predict and put it in this path："../../model/classifier/en.jpg"
-```python
-char image_file[] = "../../model/classifier/en.jpg";
-```
+#### 4. Configure image and model .
+
 #### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
 
 ```python
-char names[] = "../../model/classifier/age1.1.names";
-char cfg_file[] = "../../model/classifier/age1.1.cfg";
-char weight_file[] = "../../model/classifier/age1.1.weights";
-char image_file[] = "../../model/classifier/en.jpg";
+"../../model/classifier/age1.1.names";
+"../../model/classifier/age1.1.cfg";
+"../../model/classifier/age1.1.weights";
+"../../model/classifier/en.jpg";
 ```
+
 &nbsp;&nbsp;**age1.1.names** ---The value of the attribute to be predicted, as in this case,  age.  
 &nbsp;&nbsp;**age1.1.cfg** ---The structure of the deep neural network.  
 &nbsp;&nbsp;**age1.1.weights** ---Trained weight.  
 &nbsp;&nbsp; **en.jpg** --- The image you want to predict
 
-#### 4. Run
+#### 5. Run
 
 ```python
 python face_attribute_prediction.py
@@ -47,12 +52,10 @@ python face_attribute_prediction.py
 
 ### C
 
-#### 1. Start MSVS, open Sunergy.sln, set x64 and Release.
+#### 1. Start VS2015, open Sunergy.sln, set x64 and Release.
 
-#### 2. Rename the image you want to predict and put it in this path："../../model/classifier/en.jpg"
-```C++
-char image_file[] = "../../model/classifier/en.jpg";
-```
+#### 2. Configure image and model .
+
 #### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
 
 
@@ -74,9 +77,9 @@ char image_file[] = "../../model/classifier/en.jpg";
 
 ### python
 
-#### 1. Start MSVS, open Sunergy.sln, set x64 and Release.
+#### 1. Start VS2015, open Sunergy.sln, set x64 and Release.
 #### 2. Choose project sunergy, Do the: Property -> Configuration type -> Dynamic Library(.lib), then Do the: Build -> Build Sunergy.
-#### 3. Copy the libsunergy.dll in lib/windows to the folder example/python/face_attribute_prediction, and rename it as libsunergy.pyd.
+#### 3. Copy the libsunergy.dll in lib/windows to example/python/face_attribute_prediction, and rename it as libsunergy.pyd.
 #### 4. Check the if the files' locations are consistent with the path in face_attribute_prediction.py.
 
 ```python
@@ -91,16 +94,19 @@ char image_file[] = "../../model/classifier/en.jpg";
 &nbsp;&nbsp;**age1.1.weights** ---Trained weight.  
 &nbsp;&nbsp; **en.jpg** --- The image you want to predict
 
-#### 5. Open command line and enter the path example/python/face_attribute_prediction, enter python face_attribute_prediction.py and run it.
-
+#### 5. Open cmd and run .
+```python
+cd example/python/face_attribute_prediction
+python face_attribute_prediction.py
+```
 
 --------------------
 
 &nbsp;
 #### Code:
 
-#### C++
-```C++
+#### C
+```C
 #include "Sunergy.h"
 #include <stdio.h>
 #ifdef _WIN32

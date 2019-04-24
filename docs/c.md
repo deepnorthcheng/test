@@ -1,4 +1,4 @@
-# **Sunergy** **Interface**
+# Sunergy C Interface
 ## 1 Sunergy Datatypes Reference
 ### 1.1 sunergy_t
 **sunergy_t** is a pointer to an opaque structure holding the sunergy library context.The sunergy library context must be created using **sunergy_init**() and the returned handle must be passed to all subsequent library function calls. The context should be destroyed at the end using **sunergy_free**().
@@ -473,35 +473,4 @@ The operation was launched successfully.
 Invalid (NULL) pointer supplied of handle
 ```
 
-## records
-Version | Date | Author | Notes
----|--- | --- | ---
-1.0.0 | 2018.8.16 | Mingzhe Pan | Original version
----|--- | --- | ---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## C interface

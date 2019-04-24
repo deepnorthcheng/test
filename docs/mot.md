@@ -1,30 +1,36 @@
 ## Multi-object tracking
 
-This example shows how to use the deep neural network models which trained on Sunergy to do Multi-object tracking.
+This example shows how to use the deep learning models to do multi-object tracking.
 
 -------------
 
 ## How to use on **Linux**:
 
-#### 1. Copy the libsunergy.so file in lib/linux to the folder where the multi-object tracking program locates
+#### 1. Go to Sunergy and compile
+```python
+cd Sunergy
+make
+```
+
+#### 2. Copy libsunergy.so to the multi-object_tracking folder .
 
 ```pyhton
 cp -i lib/linux/libsunergy.so example/python/multi-object_tracking
 ```
 
-#### 2. Enter the folder where the multi-object tracking program locates
+#### 3. Enter the multi-object tracking folder .
 
 ```python
 cd example/python/multi-object_tracking
 ```
 
-#### 3. Modify the MOTDIR to the path of object detection result and image_file to the path of the video picture
+#### 4. Configure labels and images of viedeo . 
 ```python
 MOTDIR ="../../model/tracking/MOT16/test/MOT16-06/det/"
 image_file = "../../model/tracking/MOT16/test/MOT16-06/img1/"
 ```
 
-#### 4. Run
+#### 5. Run
 
 ```python
 python multi-object_tracking.py
@@ -37,11 +43,11 @@ python multi-object_tracking.py
 
 ### C
 
-#### 1. Start MSVS, open example/c/tracking/tracking.sln , set x64 and Release.
+#### 1. Start VS2015, open example/c/tracking/tracking.sln , set x64 and Release.
 
-#### 2. Modify *MOTDIR* to the path of the video you want to do multi-object tracking.
+#### 2. Configure labels and images of viedeo . 
 
-```C++
+```C
         #define MOTDIR "../../../model/tracking/MOT16/test/MOT16-06/"
 ```
 
@@ -54,8 +60,8 @@ python multi-object_tracking.py
 &nbsp;
 #### Code:
 
-#### C++
-```C++
+#### C
+```C
 #include "stdlib.h"
 #include "string.h"
 #include <opencv2/core.hpp>  //<highgui.h>

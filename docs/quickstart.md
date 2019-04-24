@@ -21,10 +21,10 @@ If you do not use GPU environment, please skip
 * [Check CUDA environment](cuda8.0&cudnnv6.md)<br>
 
 ### 3 Clone sunergy source from github
+The folder includes five examples: object detection, face attribute prediction, pose estimation, cross-camera re-id and multi-object tracking.
 ```bash
 https://github.com/DeepNorthAI/Sunergy_multiPlatform
 ```
-
 
 
 Go to Sunergy and download yolo-v3 model
@@ -42,7 +42,7 @@ gedit Makefile
 ```
 
 Modify Makefile macro definition according to computer requirement
-Use 1 and does not use 0, python_verson 2 or 3 corresponds to 2.7 and 3.5, respectively.
+Use 1 and does not use 0, python_version 2 or 3 corresponds to 2.7 and 3.5, respectively.
 ```bash
 GPU=1
 CUDNN=1
@@ -67,7 +67,7 @@ make
 Execute yolov3 demo to detect dogs
 
 ```bash
-python test.py
+python demo.py
 ```
 ![http://yicun.vmaxx.tech:3000/mingzhe_pan/sunergy_multiplatform/src/master/docs/screenshot/dog.png](https://github.com/DeepNorthAI/Sunergy_multiPlatform/tree/master/docs/screenshot/dog.png)
 
@@ -76,24 +76,22 @@ python test.py
 ## Windows
 
 ### 1 IDE Environment
-* VS2015
+* Microsoft Visual Studio 2015
 
-### 2 GPU Environment
-Please refer to [here](cuda-windows.md) to see the GPU environment Installation in Windows .
-* CUDA8.0
-* CuDNN6.0
+### 2 Check GPU environmental
 
-### 3 Download the Code  
-The folder includes four examples: object detection, face attribute prediction, pose estimation and tracking.
+If you do not use GPU environment, please skip
+* [Check GPU Driver Installation and CUDA environment](cuda-windows.md)
+
+
+### 3  Clone sunergy source from github
+The folder includes five examples: object detection, face attribute prediction, pose estimation, cross-camera re-id and multi-object tracking.
 ```bash
-git clone https://github.com/VMaxxInc/Sunergy_multiPlatform.git
-或者
-git clone http://yicun.vmaxx.tech:3000/mingzhe_pan/sunergy_github.git
-
+https://github.com/DeepNorthAI/Sunergy_multiPlatform
 ```
 
 ### 4 Open the Projects
-#### 4.1 object detection/face attribute prediction/pose estimation
+#### 4.1 object detection/face attribute prediction/pose estimation/cross-camera re-id
    * Start VS2015, open project Sunergy.sln .
 
 #### 4.2 multi-object tracking
@@ -101,14 +99,15 @@ git clone http://yicun.vmaxx.tech:3000/mingzhe_pan/sunergy_github.git
 
 ### 5 Build and Run
 
-#### 5.1 object_detection/face_attribute_prediction/pose_estimation
+#### 5.1 object_detection/face_attribute_prediction/pose_estimation/cross-camera re-id
 * choose sunergy, right-click and choose build .
-* choose object detection/face attribute prediction/pose estimation, right-click and choose build .
-* choose object detection/face attribute prediction/pose estimation, right-click and choose set as startup item, and then press F5 to run .
+* choose object detection/face attribute prediction/pose estimation/cross-camera re-id, right-click and choose build .
+* choose object detection/face attribute prediction/pose estimation/cross-camera re-id, right-click and choose set as startup project, and then press F5 to run .
+
+*Note: These four examples all work as described above. Different examples correspond to different projects.*
 
 #### 5.2 tracking
 * choose tracking, right-click and choose build .
 * choose tracking, right-click and choose set as startup item, and then press F5 to run .
 
-## 6 PS
-* Please refer to [Examples](examples.md) to see the detailed information about project configuration .
+#### 5.3 See detailed information in [Examples](example.md) 
