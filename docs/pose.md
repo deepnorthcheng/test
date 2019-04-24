@@ -1,81 +1,83 @@
-## 姿态估计
+## Pose estimation
 
-这个例子展示了如何使用 Sunergy上训练好的深度神经网络进行人体的姿态估计。
 
--------------
+This example shows how to use the deep neural network models which trained on Sunergy to do pose estimation.
 
-## 在**Linux**上使用:
+--------------
 
-#### 1. 在主目录打开终端，输入make后，将 lib/linux 中的 libsunergy.so文件拷贝至姿态估计程序所在文件夹
+## How to use on **Linux**:
+
+#### 1. Open Terminal and enter make. Then copy the libsunergy.so file in lib/linux to the folder where the pose estimation program locates.
 
 ```pyhton
 cp -i lib/linux/libsunergy.so example/python/pose_estimation
 ```
 
-#### 2. 进入姿态估计程序所在文件夹
+#### 2. Enter the folder where the pose estimation program locates.
 
 ```python
 cd example/python/pose_estimation
 ```
 
-#### 3. 将你需要预测的图片重命名并放入路径：  "../../model/pose/person.jpg".
+#### 3. Rename the image you want to predict and put it in this path："../../model/pose/person.jpg".
 ```python
 char image_file[] = "../../model/pose/person.jpg";
 ```
-####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
+#### &nbsp;&nbsp;&nbsp; Check if the following three files' locations and names are consistent with  the following code.
 
-```python
+
+```pythoon
 char cfg_file[] = "../../model/pose/BODY-POSE25_DET_002.cfg";
 char weight_file[] = "../../model/pose/BODY-POSE25_DET_002.weights";
 char image_file[] = "../../model/pose/person.jpg";
-```
-&nbsp;&nbsp; **BODY-POSE25_DET_002.cfg** 文件是所采用的深度神经网络的结构  
-&nbsp;&nbsp; **pose.weights** 文件是已训练好的权重  
-&nbsp;&nbsp; **person.jpg** 文件是您要姿态估计的图片
+``` 
+&nbsp;&nbsp;**BODY-POSE25_DET_002.cfg** --- The structure of the deep neural network.  
+&nbsp;&nbsp;**BODY-POSE25_DET_002.weights** --- Trained weight.  
+&nbsp;&nbsp;**person.jpg** --- The image you want to estimation.
 
-#### 4. 运行程序
+#### 4. Run
 
 ```python
 python pose_estimation.py
 ```
 
+-------------------
 
-------------
+## How to use on **Windows**:
 
-## 在 **Windows**上使用: 
+### C
 
-### C程序
+#### 1. Start MSVS, open Sunergy.sln, set x64 and Release.
 
-#### 1. 启动MSVS, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Release .
-
-#### 2. 将你需要预测的图片重命名并放入路径：  "../../model/pose/person.jpg".
+#### 2. Rename the image you want to predict and put it in this path："../../model/pose/person.jpg".
 ```C++
 char image_file[] = "../../model/pose/person.jpg";
 ```
-####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
+#### &nbsp;&nbsp;&nbsp; Check if the following three files' locations and names are consistent with  the following code.
+
 
 ```C++
 char names[] = "../../model/pose/coco.names";
-char cfg_file[] = "../../model/pose/BODY-POSE25_DET_002.cfg";
-char weight_file[] = "../../model/pose/BODY-POSE25_DET_002.weights";
+char cfg_file[] = "../../model/pose/pose.cfg";
+char weight_file[] = "../../model/pose/pose.weights";
 char image_file[] = "../../model/pose/person.jpg";
-```
+``` 
 
-&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值，如：bed,diningtable,toilet,tvmonitor,laptop,mouse,remote,eyboard 等 
-&nbsp;&nbsp; **BODY-POSE25_DET_002.cfg** 文件是所采用的深度神经网络的结构  
-&nbsp;&nbsp; **BODY-POSE25_DET_002.weights** 文件是已训练好的权重  
-&nbsp;&nbsp; **person.jpg** 文件是您要姿态估计的图片
+&nbsp;&nbsp; **coco.names** ---The name of object detection's result can be, such as: dog, car...  
+&nbsp;&nbsp;**BODY-POSE25_DET_002.weights** --- The structure of the deep neural network.  
+&nbsp;&nbsp;**BODY-POSE25_DET_002.weights** --- Trained weight.  
+&nbsp;&nbsp;**person.jpg** --- The image you want to estimation.
 
-#### 3. 选择项目Sunergy，右击鼠标属性，配置类型选择为静态库(.lib)，之后右击鼠标选择生成解决方案 .
-#### 4. 选择项目pose_estimation，右击鼠标选择生成解决方案 .
-####  &nbsp;&nbsp;&nbsp;&nbsp; 再次右击鼠标将其设为启动项目，并运行 .
+#### 3. Choose project sunergy, Do the: Property -> Configuration type -> Static Library(.lib), then Do the: Build -> Build Sunergy.
+#### 4. Choose project pose_estimation, Do the: Build -> Build pose_estimation. 
+####  &nbsp;&nbsp;&nbsp;&nbsp;Set *pose_estimation* as the startup project and run it.
 
-### python程序
+### python
 
-#### 1. 启动MSVS，打开Sunergy.sln, 解决方案配置选择 x64 和 Release .
-#### 2. 选择项目sunergy，右击鼠标属性，配置类型选择为动态库(.dll)，右击鼠标选择生成解决方案 .
-#### 3. 将 lib/windows下的 libsunergy.dll 拷贝至 example/python/pose_estimation 目录下，将其后缀名 .dll 改为 .pyd .
-#### 4. 检查 pose_estimation.py 程序中的文件路径是否正确 .
+#### 1. Start MSVS, open Sunergy.sln.
+#### 2. Choose project sunergy, Do the: Property -> Configuration type -> Dynamic Library(.lib), then Do the: Build -> Build Sunergy.
+#### 3. Copy the libsunergy.dll in lib/windows to the folder example/python/pose_estimation, and rename it as libsunergy.pyd.
+#### 4. Check the if the files' locations are consistent with the path in pose_estimation.py.
 
 ```python
 "../../model/pose/coco.data";
@@ -84,18 +86,19 @@ char image_file[] = "../../model/pose/person.jpg";
 "../../model/pose/person.jpg";
 ```
 
-&nbsp;&nbsp; **coco.data** 文件是COCO数据集信息，并可索引至coco.names
-&nbsp;&nbsp; **BODY-POSE25_DET_002.cfg** 文件是所采用的深度神经网络的结构  
-&nbsp;&nbsp; **BODY-POSE25_DET_002.weights** 文件是已训练好的权重  
-&nbsp;&nbsp; **person.jpg** 文件是您要姿态估计的图片
+&nbsp;&nbsp; **coco.data** ---The information of dataset COCO, and it can index to coco.names
+&nbsp;&nbsp;**BODY-POSE25_DET_002.weights** --- The structure of the deep neural network.  
+&nbsp;&nbsp;**BODY-POSE25_DET_002.weights** --- Trained weight.  
+&nbsp;&nbsp;**person.jpg** --- The image you want to estimation.
 
-#### 5. 由命令行进入目录 example/python/pose_estimation，执行 python pose_estimation.py 运行 .
+#### 5. Open command line and enter the path example/python/pose_estimation, enter python pose_estimation.py and run it.
 
 
-------------
+
+---------------------
 
 &nbsp;
-#### *参考代码:*  
+#### *Code:*
 
 #### C++
 ```C++

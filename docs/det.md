@@ -1,85 +1,84 @@
-## 目标检测
+## Object detection
 
-这个例子展示了如何使用Sunergy上训练好的深度神经网络进行目标检测.
+This example shows how to use the deep neural network models which trained on Sunergy to do object detection.
 
-------
+--------
 
-## 在**Linux**上使用:
+## How to use on **Linux**:
 
-#### 1. 在主目录打开终端，输入make后，将 lib/linux 中的 libsunergy.so文件拷贝至目标检测程序所在文件夹
+#### 1. Open Terminal and enter make. Then copy the libsunergy.so file in lib/linux to the folder where the object detection program locates.
 
 ```pyhton
 cp -i lib/linux/libsunergy.so example/python/object_detection
 ```
 
-#### 2. 进入目标检测程序所在文件夹
+#### 2. Enter the folder where the object detection program locates.
 
 ```python
 cd example/python/object_detection
 ```
 
-#### 3. 将你需要进行目标检测的图片重命名并放入路径： "../../model/detect/dog.jpg".
+#### 3. Rename the image you want to do object detection and put it in this path："../../model/detect/dog.jpg"
+```python
+        char image_file[] = "../../model/detect/dog.jpg";
+```
+#### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
+
 
 ```python
-char image_file[] = "../../model/detect/dog.jpg";
+	char names[] = "../../model/detect/coco.names";
+	char cfg_file[] = "../../model/detect/yolov3.cfg";
+	char weight_file[] = "../../model/detect/yolov3.weights";
+	char image_file[] = "../../model/detect/dog.jpg";
 ```
+&nbsp;&nbsp;**coco.names** ---The name of object detection's result can be, such as: dog, car...  
+&nbsp;&nbsp;**yolov3.cfg** ---The structure of the deep neural network.  
+&nbsp;&nbsp;**yolov3.weights** --32-Trained weight.  
+&nbsp;&nbsp; **dog.jpg** --- The image you want to do object detection
 
-####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
-
-```python
-char names[] = "../../model/detect/coco.names";
-char cfg_file[] = "../../model/detect/yolov3.cfg";
-char weight_file[] = "../../model/detect/yolov3.weights";
-char image_file[] = "../../model/detect/dog.jpg";
-```
-&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值，如：bed,diningtable,toilet,tvmonitor,laptop,mouse,remote,eyboard 等。  
-&nbsp;&nbsp; **yolov3.cfg** 文件是所采用的深度神经网络的结构  
-&nbsp;&nbsp; **yolov3.weights** 文件是已训练好的权重  
-&nbsp;&nbsp; **dog.jpg** 文件是您需要目标检测的图片
-
-#### 4. 运行程序
+#### 4. Run
 
 ```python
 python object_detection.py
 ```
 
--------
+-----------
 
-## 在 **Windows**上使用:  
+## How to use on **Windows**: 
 
-### C程序
+### C
 
-#### 1. 启动MSVS, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Release .
+#### 1. Start MSVS, open Sunergy.sln, set x64 and Release.
 
-#### 2. 将你需要进行目标检测的图片重命名并放入路径： "../../model/detect/dog.jpg".
+#### 2. Rename the image you want to do object detection and put it in this path："../../model/detect/dog.jpg"
+```C++
+        char image_file[] = "../../model/detect/dog.jpg";
+```
+#### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
+
 
 ```C++
-char image_file[] = "../../model/detect/dog.jpg";
-```
-####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
-
-```C++
-char names[] = "../../model/detect/coco.names";
-char cfg_file[] = "../../model/detect/yolov3.cfg";
-char weight_file[] = "../../model/detect/yolov3.weights";
-char image_file[] = "../../model/detect/dog.jpg";
+	char names[] = "../../model/detect/coco.names";
+	char cfg_file[] = "../../model/detect/yolov3.cfg";
+	char weight_file[] = "../../model/detect/yolov3.weights";
+	char image_file[] = "../../model/detect/dog.jpg";
 ```
 
-&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值，如：bed,diningtable,toilet,tvmonitor,laptop,mouse,remote,eyboard 等。  
-&nbsp;&nbsp; **yolov3.cfg** 文件是所采用的深度神经网络的结构  
-&nbsp;&nbsp; **yolov3.weights** 文件是已训练好的权重  
-&nbsp;&nbsp; **dog.jpg** 文件是您需要目标检测的图片
+&nbsp;&nbsp;**coco.names** ---The name of object detection's result can be, such as: dog, car...  
+&nbsp;&nbsp;**yolov3.cfg** ---The structure of the deep neural network.  
+&nbsp;&nbsp;**yolov3.weights** ---Trained weight.  
+&nbsp;&nbsp; **dog.jpg** --- The image you want to do object detection
 
-#### 3. 选择项目sunergy，右击鼠标属性，配置类型选择为静态库(.lib)，之后右击鼠标选择生成解决方案 .
-#### 4. 选择项目object_detection，右击鼠标选择生成解决方案 .
-####  &nbsp;&nbsp;&nbsp;&nbsp; 再次右击鼠标将其设为启动项目，并运行.
+#### 3. Choose project sunergy, Do the: Property -> Configuration type -> Static Library(.lib), then Do the: Build -> Build Sunergy.
+#### 4. Choose project object_detection, Do the: Build -> Build object_detection. 
+####  &nbsp;&nbsp;&nbsp;&nbsp;Set *object_detection* as the startup project and run it.
 
-### python程序
+### python
 
-#### 1. 启动MSVS，打开Sunergy.sln，解决方案配置选择 x64 和 Release .
-#### 2. 选择项目sunergy，右击鼠标属性，配置类型选择为动态库(.dll)，右击鼠标选择生成解决方案 .
-#### 3. 将 lib/windows下的libsunergy.dll 拷贝至 example/python/object_detection 目录下，将其后缀名 .dll 改为 .pyd .
-#### 4. 检查 object_detection.py 程序中的文件路径是否正确 .
+#### 1. Start MSVS, open Sunergy.sln, set x64 and Release.
+#### 2. Choose project sunergy, Do the: Property -> Configuration type -> Dynamic Library(.lib), then Do the: Build -> Build Sunergy.
+#### 3. Copy the libsunergy.dll in lib/windows to the folder example/python/object_detection, and rename it as libsunergy.pyd.
+#### 4. Check the if the files' locations are consistent with the path in object_detection.py.
 
 ```python
 "../../model/detect/coco.names"
@@ -88,19 +87,20 @@ char image_file[] = "../../model/detect/dog.jpg";
 "../../model/detect/dog.jpg"
 ```
 
-&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值，如：bed,diningtable,toilet,tvmonitor,laptop,mouse,remote,eyboard 等。  
-&nbsp;&nbsp; **yolov3.cfg** 文件是所采用的深度神经网络的结构  
-&nbsp;&nbsp; **yolov3.weights** 文件是已训练好的权重  
-&nbsp;&nbsp; **dog.jpg** 文件是您需要目标检测的图片
+&nbsp;&nbsp;**coco.names** ---The name of object detection's result can be, such as: dog, car...  
+&nbsp;&nbsp;**yolov3.cfg** ---The structure of the deep neural network.  
+&nbsp;&nbsp;**yolov3.weights** ---Trained weight.  
+&nbsp;&nbsp; **dog.jpg** --- The image you want to do object detection
 
-#### 5. 由命令行进入目录 example/python/object_detection，执行 python object_detection.py 运行 .
+#### 5. Open command line and enter the path example/python/object_detection, enter python object_detection.py and run it.
 
 
---------
+
+------
 
 &nbsp;
-#### *参考代码:* 
- 
+#### Code:
+
 #### C++
 ```C++
 #include "Sunergy.h"
@@ -264,3 +264,4 @@ if __name__ == "__main__":
 
 
 ```
+
