@@ -8,15 +8,15 @@
 +6
 ### 1.2 CUDA安装
 * 下载结束后，点击.exe进行安装<br>
-![](/screenshot/CUDA/1.png)
+![](../screenshot/CUDA/1.png)
 * 系统自动启动安装程序，选择自定义模式，点击下一步<br> 
-![](/screenshot/CUDA/2.png)
+![](../screenshot/CUDA/2.png)
 * 安装选项默认全部勾选，点击下一步<br>
-![](/screenshot/CUDA/3.png)
+![](../screenshot/CUDA/3.png)
 * 默认安装位置，点击下一步<br> 
-![](/screenshot/CUDA/4.png)
+![](../screenshot/CUDA/4.png)
 * 安装结束<br> 
-![](/screenshot/CUDA/5.png)
+![](../screenshot/CUDA/5.png)
 
 ### 1.3 配置环境变量
   安装完成后默认配置了CUDA_PATH和CUDA_PATH_V8_0两个环境变量，如下配置剩余环境变量
