@@ -46,7 +46,7 @@ python multi-object_tracking.py
 
 #### 2. 配置视频图片 .
 
-```C++
+```C
 #define MOTDIR "../../../model/tracking/MOT16/test/MOT16-06/"
 ```
 #### 3. 选择项目tracking，右击鼠标选择生成解决方案 .

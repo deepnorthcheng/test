@@ -104,8 +104,8 @@ python object_detection.py
 &nbsp;
 #### *参考代码:* 
  
-#### C++
-```C++
+#### C
+```C
 #include "Sunergy.h"
 #include <stdio.h>
 #ifdef _WIN32
