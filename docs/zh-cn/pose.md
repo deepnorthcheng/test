@@ -2,6 +2,7 @@
 
 这个例子展示了如何使用 Sunergy上训练好的深度神经网络进行人体的姿态估计。
 
+-------------
 
 ## 在**Linux**上使用:
 
@@ -38,6 +39,8 @@ char image_file[] = "../../model/pose/person.jpg";
 python pose_estimation.py
 ```
 
+
+------------
 
 ## 在 **Windows**上使用: 
 
@@ -87,6 +90,9 @@ char image_file[] = "../../model/pose/person.jpg";
 &nbsp;&nbsp; **person.jpg** 文件是您要姿态估计的图片
 
 #### 5. 由命令行进入目录 example/python/pose_estimation，执行 python pose_estimation.py 运行 .
+
+
+------------
 
 &nbsp;
 #### *参考代码:*  

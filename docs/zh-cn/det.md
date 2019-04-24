@@ -2,6 +2,7 @@
 
 这个例子展示了如何使用Sunergy上训练好的深度神经网络进行目标检测.
 
+------
 
 ## 在**Linux**上使用:
 
@@ -42,7 +43,7 @@ char image_file[] = "../../model/detect/dog.jpg";
 python object_detection.py
 ```
 
-
+-------
 
 ## 在 **Windows**上使用:  
 
@@ -93,6 +94,9 @@ char image_file[] = "../../model/detect/dog.jpg";
 &nbsp;&nbsp; **dog.jpg** 文件是您需要目标检测的图片
 
 #### 5. 由命令行进入目录 example/python/object_detection，执行 python object_detection.py 运行 .
+
+
+--------
 
 &nbsp;
 #### *参考代码:* 

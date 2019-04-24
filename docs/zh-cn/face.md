@@ -2,6 +2,7 @@
 
 这个例子展示了如何使用 Sunergy上训练好的深度神经网络进行人脸属性预测，如：年龄，性别，情绪等。本文以年龄预测为例。
 
+----------
 
 ## 在**Linux**上使用:
 
@@ -42,7 +43,7 @@ char image_file[] = "../../model/classifier/en.jpg";
 python face_attribute_prediction.py
 ```
 
-
+---------
 
 ## 在 **Windows**上使用: 
 
@@ -92,6 +93,8 @@ char image_file[] = "../../model/classifier/en.jpg";
 
 #### 5. 由命令行进入目录 example/python/face_attribute_prediction，执行 python face_attribute_prediction.py 运行 .
 
+
+----------
 
 &nbsp;
 #### *参考代码:*  

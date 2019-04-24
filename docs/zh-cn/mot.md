@@ -2,6 +2,7 @@
 
 这个例子展示了如何使用Sunergy上训练好的深度神经网络对视频进行多目标跟踪.
 
+-------------
 
 ## 在**Linux**上使用:
 
@@ -29,6 +30,7 @@ image_file = "../../model/tracking/MOT16/test/MOT16-06/img1/"
 python multi-object_tracking.py
 ```
 
+---------------
 
 ## 在 **Windows**上使用: 
 
@@ -44,6 +46,8 @@ python multi-object_tracking.py
 #### 3. 选择项目tracking，右击鼠标选择生成解决方案 .
 #### 4. 再次右击鼠标将其设为启动项目，并运行 .
 
+
+---------------
 
 &nbsp;
 #### *参考代码:*  
