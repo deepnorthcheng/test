@@ -1,43 +1,45 @@
 ## 目标检测
 
-这个例子展示了如何使用Sunergy上训练好的深度神经网络进行目标检测.
+这个例子展示了如何在Sunergy上使用深度学习模型进行目标检测.
 
 ------
 
 ## 在**Linux**上使用:
 
-#### 1. 在主目录打开终端，输入make后，将 lib/linux 中的 libsunergy.so文件拷贝至目标检测程序所在文件夹
+#### 1. 进入Sunergy目录并编译
+```python
+cd Sunergy
+make
+```
+
+#### 2. 将 libsunergy.so 复制到目标检测文件夹
 
 ```pyhton
 cp -i lib/linux/libsunergy.so example/python/object_detection
 ```
 
-#### 2. 进入目标检测程序所在文件夹
+#### 3. 进入目标检测文件夹
 
 ```python
 cd example/python/object_detection
 ```
 
-#### 3. 将你需要进行目标检测的图片重命名并放入路径： "../../model/detect/dog.jpg".
-
-```python
-char image_file[] = "../../model/detect/dog.jpg";
-```
+#### 4. 配置图片和模型
 
 ####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
 
 ```python
-char names[] = "../../model/detect/coco.names";
-char cfg_file[] = "../../model/detect/yolov3.cfg";
-char weight_file[] = "../../model/detect/yolov3.weights";
-char image_file[] = "../../model/detect/dog.jpg";
+"../../model/detect/coco.names";
+"../../model/detect/yolov3.cfg";
+"../../model/detect/yolov3.weights";
+"../../model/detect/dog.jpg";
 ```
-&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值，如：bed,diningtable,toilet,tvmonitor,laptop,mouse,remote,eyboard 等。  
+&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值
 &nbsp;&nbsp; **yolov3.cfg** 文件是所采用的深度神经网络的结构  
 &nbsp;&nbsp; **yolov3.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **dog.jpg** 文件是您需要目标检测的图片
 
-#### 4. 运行程序
+#### 5. 运行程序
 
 ```python
 python object_detection.py
@@ -49,23 +51,21 @@ python object_detection.py
 
 ### C程序
 
-#### 1. 启动MSVS, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Release .
+#### 1. 启动VS2015, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Release .
 
-#### 2. 将你需要进行目标检测的图片重命名并放入路径： "../../model/detect/dog.jpg".
+#### 2. 配置图片和模型 .
 
-```C++
-char image_file[] = "../../model/detect/dog.jpg";
-```
 ####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
 
-```C++
+```C
+
 char names[] = "../../model/detect/coco.names";
 char cfg_file[] = "../../model/detect/yolov3.cfg";
 char weight_file[] = "../../model/detect/yolov3.weights";
 char image_file[] = "../../model/detect/dog.jpg";
 ```
 
-&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值，如：bed,diningtable,toilet,tvmonitor,laptop,mouse,remote,eyboard 等。  
+&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值
 &nbsp;&nbsp; **yolov3.cfg** 文件是所采用的深度神经网络的结构  
 &nbsp;&nbsp; **yolov3.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **dog.jpg** 文件是您需要目标检测的图片
@@ -76,9 +76,9 @@ char image_file[] = "../../model/detect/dog.jpg";
 
 ### python程序
 
-#### 1. 启动MSVS，打开Sunergy.sln，解决方案配置选择 x64 和 Release .
+#### 1. 启动VS2015，打开Sunergy.sln，解决方案配置选择 x64 和 Release .
 #### 2. 选择项目sunergy，右击鼠标属性，配置类型选择为动态库(.dll)，右击鼠标选择生成解决方案 .
-#### 3. 将 lib/windows下的libsunergy.dll 拷贝至 example/python/object_detection 目录下，将其后缀名 .dll 改为 .pyd .
+#### 3. 将 lib/windows下的libsunergy.dll 拷贝至 example/python/object_detection 目录下，将其重命名为libsunergy.pyd .
 #### 4. 检查 object_detection.py 程序中的文件路径是否正确 .
 
 ```python
@@ -88,13 +88,16 @@ char image_file[] = "../../model/detect/dog.jpg";
 "../../model/detect/dog.jpg"
 ```
 
-&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值，如：bed,diningtable,toilet,tvmonitor,laptop,mouse,remote,eyboard 等。  
+&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值
 &nbsp;&nbsp; **yolov3.cfg** 文件是所采用的深度神经网络的结构  
 &nbsp;&nbsp; **yolov3.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **dog.jpg** 文件是您需要目标检测的图片
 
-#### 5. 由命令行进入目录 example/python/object_detection，执行 python object_detection.py 运行 .
-
+#### 5. 打开命令行，运行程序 .
+```python
+cd example/python/object_detection
+python object_detection.py
+```
 
 --------
 

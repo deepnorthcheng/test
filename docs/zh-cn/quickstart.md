@@ -21,11 +21,10 @@ pip install opencv-python
 
 
 ### 3 从github克隆sunergy源代码
-```bash
-git clone https://github.com/VMaxxInc/Sunergy_multiPlatform.git
-或者
-git clone http://yicun.vmaxx.tech:3000/mingzhe_pan/sunergy_github.git
+文件夹中包含五个例子：目标检测, 人脸属性预测, 姿态估计, 跨摄像头重识别和多目标追踪
 
+```bash
+https://github.com/DeepNorthAI/Sunergy_multiPlatform
 ```
 
 进入sunergy目录，下载yolo-v3模型
@@ -42,7 +41,7 @@ gedit Makefile
 ```
 
 根据电脑需求修改Makefile宏定义
-使用为1不使用为0，python_verson为2或者3分别对应2.7和3.5
+使用为1不使用为0，python_version为2或者3分别对应2.7和3.5
 ```bash
 GPU=1
 CUDNN=1
@@ -62,9 +61,10 @@ make
 ```
 
 ### 5 测试sunergy
+
 执行yolov3 检测dog的demo
 ```bash
-python test.py
+python demo.py
 ```
 ![http://yicun.vmaxx.tech:3000/mingzhe_pan/sunergy_multiplatform/src/master/docs/screenshot/dog.png](https://github.com/VMaxxInc/Sunergy_multiPlatform/blob/master/docs/screenshot/dog.png)
 
@@ -73,40 +73,38 @@ python test.py
 ## Windows
 
 ### 1 IDE运行环境
-* VS2015
+* Microsoft Visual Studio 2015
 
-### 2 GPU环境
-Windows下GPU环境安装请参考 [这里](/zh-cn/cuda-windows.md)
-* CUDA8.0
-* CuDNN6.0
+### 2 检查GPU环境
+若不使用GPU加速请跳过 
+* [检查GPU驱动和CUDA 环境](/zh-cn/cuda-windows.md)
 
-### 3 下载代码
-文件夹中四个例子：目标检测, 人脸属性预测, 位姿识别, 行人追踪
+
+### 3 从github克隆sunergy源代码
+文件夹中包含五个例子：目标检测, 人脸属性预测, 姿态估计, 跨摄像头重识别和多目标追踪
 ```bash
-git clone https://github.com/VMaxxInc/Sunergy_multiPlatform.git
-或者
-git clone http://yicun.vmaxx.tech:3000/mingzhe_pan/sunergy_github.git
-
+https://github.com/DeepNorthAI/Sunergy_multiPlatform
 ```
 
 ### 4 打开项目
-#### 4.1 项目：目标检测, 人脸属性预测, 位姿识别
+#### 4.1 项目：目标检测, 人脸属性预测, 姿态估计, 跨摄像头重识别
    * 运行VS2015, 打开项目Sunergy.sln .
 
-#### 4.2 项目：行人追踪
+#### 4.2 项目：多目标追踪
    * 运行VS2015, 打开项目example/c/tracking/tracking.sln .
 
 
 ### 5 生成解决方案及运行
 
-#### 5.1 项目：目标检测, 人脸属性预测, 位姿识别
+#### 5.1 项目：目标检测, 人脸属性预测, 姿态估计, 跨摄像头重识别
 * 选择项目sunergy, 右击鼠标选择生成解决方案 .
-* 选择项目object detection/face attribute prediction/pose estimation, 右击鼠标选择生成解决方案 .
-* 选择项目object detection/face attribute prediction/pose estimation, 右击鼠标选择设为启动项,F5执行 .
+* 选择项目object detection/face attribute prediction/pose estimation/cross-camera re-id, 右击鼠标选择生成解决方案 .
+* 选择项目object detection/face attribute prediction/pose estimation/cross-camera re-id, 右击鼠标选择设为启动项, F5执行 .
+
+*注：这四个例子的运行方式均如上文所述，不同的例子对应于不同的项目*
 
 #### 5.2 项目：行人追踪
 * 选择项目tracking, 右击鼠标选择生成解决方案 .
-* 选择项目tracking, 右击鼠标选择设为启动项,F5执行 .
+* 选择项目tracking, 右击鼠标选择设为启动项, F5执行 .
 
-### 6 附
-* 具体项目配置信息参考 [例子](/zh-cn/example.md)
+#### 5.3 详细信息参考 [例子](/zh-cn/example.md)

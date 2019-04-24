@@ -446,34 +446,5 @@ int set_sunergy_param(sunergy_t handle, float nms, float means, float normalizat
 
 ```
 
-## 版本
-Version | Date | Author | Notes
----|--- | --- | ---
-1.0.0 | 2018.8.16 | Mingzhe Pan | Original version
----|--- | --- | ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

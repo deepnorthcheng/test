@@ -86,13 +86,13 @@ Sunergy可以通过Make命令进行相应编译。
 * Windows10
 
 ## 2 IDE运行环境
-* Visual Studio  
+* Microsoft Visual Studio 2015
    * 从 [这里](https://visualstudio.microsoft.com/zh-hans/downloads/) 下载  
    * CUDA8.0不支持VS2017版本，因此建议使用VS2015
    * 在安装GPU环境前应先安装好VS
   
 ## 3 依赖项
-* [CUDA](https://developer.nvidia.com/cuda-downloads) 运行GPU模型必须的依赖项  
+* [CUDA](https://developer.nvidia.com/cuda-toolkit-archive) 运行GPU模型必须的依赖项  
   * 建议使用CUDA8+和最新的CUDA库  
-* [CuDNN](https://developer.nvidia.com/rdp/cudnn-download) 加速包  
+* [CuDNN](https://developer.nvidia.com/cudnn) 加速包  
   * 建议使用CuDNN6+和最新的CuDNN库

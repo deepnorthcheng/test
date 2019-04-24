@@ -1,30 +1,36 @@
 ## 多目标跟踪
 
-这个例子展示了如何使用Sunergy上训练好的深度神经网络对视频进行多目标跟踪.
+这个例子展示了如何在Sunergy上使用深度学习模型对视频进行多目标跟踪.
 
 -------------
 
 ## 在**Linux**上使用:
 
-#### 1. 将 lib/linux 中的libsunergy.so文件拷贝至多目标追踪程序所在文件夹
+#### 1. 进入Sunergy目录并编译
+```python
+cd Sunergy
+make
+```
+
+#### 2. 将 libsunergy.so 复制到多目标跟踪文件夹
 
 ```pyhton
 cp -i lib/linux/libsunergy.so example/python/multi-object_tracking
 ```
 
-#### 2. 进入多目标追踪程序所在文件夹
+#### 3. 进入多目标追踪程文件夹
 
 ```python
 cd example/python/multi-object_tracking
 ```
 
-#### 3. 修改目标检测结果所在路径MOTDIR, 以及视频图片所在路径image_file
+#### 4. 配置视频图片
 ```python
 MOTDIR ="../../model/tracking/MOT16/test/MOT16-06/det/"
 image_file = "../../model/tracking/MOT16/test/MOT16-06/img1/"
 ```
 
-#### 4. 运行程序
+#### 5. 运行程序
 
 ```python
 python multi-object_tracking.py
@@ -36,9 +42,9 @@ python multi-object_tracking.py
 
 ### C程序 
 
-#### 1. 启动MSVS, 打开项目 example/c/tracking/tracking.sln, 解决方案配置选择 x64 和 Release .
+#### 1. 启动VS2015, 打开项目 example/c/tracking/tracking.sln, 解决方案配置选择 x64 和 Release .
 
-#### 2. 在 main 函数中如下代码处，修改 MOTDIR 为你需要进行多目标跟踪的视频的路径.
+#### 2. 配置视频图片 .
 
 ```C++
 #define MOTDIR "../../../model/tracking/MOT16/test/MOT16-06/"
@@ -52,9 +58,9 @@ python multi-object_tracking.py
 &nbsp;
 #### *参考代码:*  
 
-#### C++
+#### C
 
-```C++
+```C
 #include "stdlib.h"
 #include "string.h"
 #include <opencv2/core.hpp> 

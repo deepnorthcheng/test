@@ -1,39 +1,46 @@
 ## 姿态估计
 
-这个例子展示了如何使用 Sunergy上训练好的深度神经网络进行人体的姿态估计。
+这个例子展示了如何在Sunergy上使用深度学习模型进行人体的姿态估计。
 
 -------------
 
 ## 在**Linux**上使用:
 
-#### 1. 在主目录打开终端，输入make后，将 lib/linux 中的 libsunergy.so文件拷贝至姿态估计程序所在文件夹
+#### 1. 进入Sunergy目录并编译
+```python
+cd Sunergy
+make
+```
+
+#### 2. 将 libsunergy.so 复制到姿态估计文件夹
 
 ```pyhton
 cp -i lib/linux/libsunergy.so example/python/pose_estimation
 ```
 
-#### 2. 进入姿态估计程序所在文件夹
+#### 3. 进入姿态估计程序所在文件夹
 
 ```python
 cd example/python/pose_estimation
 ```
 
-#### 3. 将你需要预测的图片重命名并放入路径：  "../../model/pose/person.jpg".
-```python
-char image_file[] = "../../model/pose/person.jpg";
-```
+#### 4. 配置图片和模型
+
 ####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
 
 ```python
-char cfg_file[] = "../../model/pose/BODY-POSE25_DET_002.cfg";
-char weight_file[] = "../../model/pose/BODY-POSE25_DET_002.weights";
-char image_file[] = "../../model/pose/person.jpg";
+"../../model/pose/coco.data";
+"../../model/pose/BODY-POSE25_DET_002.cfg";
+"../../model/pose/BODY-POSE25_DET_002.weights";
+"../../model/pose/person.jpg";
 ```
+
+&nbsp;&nbsp; **coco.data** 文件是COCO数据集信息，并可索引至coco.names
 &nbsp;&nbsp; **BODY-POSE25_DET_002.cfg** 文件是所采用的深度神经网络的结构  
 &nbsp;&nbsp; **pose.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **person.jpg** 文件是您要姿态估计的图片
 
-#### 4. 运行程序
+#### 5. 运行程序
 
 ```python
 python pose_estimation.py
@@ -46,22 +53,19 @@ python pose_estimation.py
 
 ### C程序
 
-#### 1. 启动MSVS, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Release .
+#### 1. 启动VS2015, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Release .
 
-#### 2. 将你需要预测的图片重命名并放入路径：  "../../model/pose/person.jpg".
-```C++
-char image_file[] = "../../model/pose/person.jpg";
-```
+#### 2. 配置图片和模型
 ####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
 
-```C++
+```C
 char names[] = "../../model/pose/coco.names";
 char cfg_file[] = "../../model/pose/BODY-POSE25_DET_002.cfg";
 char weight_file[] = "../../model/pose/BODY-POSE25_DET_002.weights";
 char image_file[] = "../../model/pose/person.jpg";
 ```
 
-&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值，如：bed,diningtable,toilet,tvmonitor,laptop,mouse,remote,eyboard 等 
+&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值
 &nbsp;&nbsp; **BODY-POSE25_DET_002.cfg** 文件是所采用的深度神经网络的结构  
 &nbsp;&nbsp; **BODY-POSE25_DET_002.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **person.jpg** 文件是您要姿态估计的图片
@@ -72,9 +76,9 @@ char image_file[] = "../../model/pose/person.jpg";
 
 ### python程序
 
-#### 1. 启动MSVS，打开Sunergy.sln, 解决方案配置选择 x64 和 Release .
+#### 1. 启动VS2015，打开Sunergy.sln, 解决方案配置选择 x64 和 Release .
 #### 2. 选择项目sunergy，右击鼠标属性，配置类型选择为动态库(.dll)，右击鼠标选择生成解决方案 .
-#### 3. 将 lib/windows下的 libsunergy.dll 拷贝至 example/python/pose_estimation 目录下，将其后缀名 .dll 改为 .pyd .
+#### 3. 将 lib/windows下的 libsunergy.dll 拷贝至 example/python/pose_estimation 目录下，将其重命名为libsunergy.pyd .
 #### 4. 检查 pose_estimation.py 程序中的文件路径是否正确 .
 
 ```python
@@ -89,7 +93,11 @@ char image_file[] = "../../model/pose/person.jpg";
 &nbsp;&nbsp; **BODY-POSE25_DET_002.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **person.jpg** 文件是您要姿态估计的图片
 
-#### 5. 由命令行进入目录 example/python/pose_estimation，执行 python pose_estimation.py 运行 .
+#### 5. 打开命令行，运行程序 .
+```python
+cd example/python/pose_estimation
+python pose_estimation.py
+```
 
 
 ------------
@@ -97,8 +105,8 @@ char image_file[] = "../../model/pose/person.jpg";
 &nbsp;
 #### *参考代码:*  
 
-#### C++
-```C++
+#### C
+```C
 
 #include "Sunergy.h"
 #include <stdio.h>

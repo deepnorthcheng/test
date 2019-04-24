@@ -1,35 +1,38 @@
 ## 人脸属性预测
 
-这个例子展示了如何使用 Sunergy上训练好的深度神经网络进行人脸属性预测，如：年龄，性别，情绪等。本文以年龄预测为例。
+这个例子展示了如何在Sunergy上使用深度学习模型进行人脸属性预测，如：年龄，性别，情绪等。本文以年龄预测为例。
 
 ----------
 
 ## 在**Linux**上使用:
 
-#### 1. 在主目录打开终端，输入make后，将 lib/linux 中的 libsunergy.so文件拷贝至人脸属性预测程序所在文件夹
+#### 1. 进入Sunergy目录并编译
+```python
+cd Sunergy
+make
+```
+
+#### 2.  将 libsunergy.so 复制到目标检测文件夹
 
 ```pyhton
 cp -i lib/linux/libsunergy.so example/python/face_attribute_prediction
 ```
 
-#### 2. 进入人脸属性预测程序所在文件夹
+#### 3. 进入人脸属性预测文件夹
 
 ```python
 cd example/python/face_attribute_prediction
 ```
 
-#### 3. 将你需要预测的图片重命名并放入路径：  "../../model/classifier/en.jpg".
+#### 4. 配置图片和模型
 
-```python
-char image_file[] = "../../model/classifier/en.jpg";
-```
 ####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
 
 ```python
-char names[] = "../../model/classifier/age1.1.names";
-char cfg_file[] = "../../model/classifier/age1.1.cfg";
-char weight_file[] = "../../model/classifier/age1.1.weights";
-char image_file[] = "../../model/classifier/en.jpg";
+"../../model/classifier/age1.1.names";
+"../../model/classifier/age1.1.cfg";
+"../../model/classifier/age1.1.weights";
+"../../model/classifier/en.jpg";
 ```
 
 &nbsp;&nbsp; **age1.1.names** 文件是所要预测属性的值，如本例中要预测年龄，则文件内容为年龄值 0，1，2，3 ... 100  
@@ -37,7 +40,7 @@ char image_file[] = "../../model/classifier/en.jpg";
 &nbsp;&nbsp; **age1.1.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **en.jpg** 文件是您需要预测人脸属性的图片
 
-#### 4. 运行程序
+#### 5. 运行程序
 
 ```python
 python face_attribute_prediction.py
@@ -49,15 +52,13 @@ python face_attribute_prediction.py
 
 ### C程序
 
-#### 1. 启动MSVS, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Release .
+#### 1. 启动VS2015, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Release .
 
-#### 2. 将你需要预测的图片重命名并放入路径：  "../../model/classifier/en.jpg" .
-```C++
-char image_file[] = "../../model/classifier/en.jpg";
-```
+#### 2. 配置图片和模型
+
 ####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
 
-```C++
+```
 char names[] = "../../model/classifier/age1.1.names";
 char cfg_file[] = "../../model/classifier/age1.1.cfg";
 char weight_file[] = "../../model/classifier/age1.1.weights";
@@ -74,9 +75,9 @@ char image_file[] = "../../model/classifier/en.jpg";
 
 ### python程序
 
-#### 1. 启动MSVS，打开Sunergy.sln, 解决方案配置选择 x64 和 Release .
+#### 1. 启动VS2015，打开Sunergy.sln, 解决方案配置选择 x64 和 Release .
 #### 2. 选择项目sunergy，右击鼠标属性，配置类型选择为动态库(.dll)，之后右击鼠标选择生成解决方案 .
-#### 3. 将 lib/windows 下的 libsunergy.dll 拷贝至 example/python/face_attribute_prediction 目录下，将其后缀名 .dll 改为 .pyd .
+#### 3. 将 lib/windows 下的 libsunergy.dll 拷贝至 example/python/face_attribute_prediction 目录下，将其重命名为libsunergy.pyd .
 #### 4. 检查 face_attribute_prediction.py 程序中的文件路径是否正确 .
 
 ```python
@@ -91,7 +92,11 @@ char image_file[] = "../../model/classifier/en.jpg";
 &nbsp;&nbsp; **age1.1.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **en.jpg** 文件是您需要预测人脸属性的图片
 
-#### 5. 由命令行进入目录 example/python/face_attribute_prediction，执行 python face_attribute_prediction.py 运行 .
+#### 5. 打开命令行，运行程序 .
+```python
+cd example/python/face_attribute_prediction
+python face_attribute_prediction.py
+```
 
 
 ----------
@@ -99,8 +104,8 @@ char image_file[] = "../../model/classifier/en.jpg";
 &nbsp;
 #### *参考代码:*  
 
-#### C++
-```C++
+#### C
+```C
 #include "Sunergy.h"
 #include <stdio.h>
 #ifdef _WIN32

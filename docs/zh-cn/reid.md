@@ -1,43 +1,45 @@
 ## 跨摄像头重识别
 
-这个例子展示了如何使用Sunergy上训练好的深度神经网络进行特征提取.
+这个例子展示了如何在Sunergy上使用深度学习模型进行特征提取.
 
 -----
 
 ## 在**Linux**上使用:
 
-#### 1. 在主目录打开终端，输入make后，将 lib/linux 中的 libsunergy.so文件拷贝至特征提取程序所在文件夹
+#### 1. 进入Sunergy目录并编译
+```python
+cd Sunergy
+make
+```
+
+#### 2. 将 libsunergy.so 复制到跨摄像头重识别文件夹
 
 ```pyhton
 cp -i lib/linux/libsunergy.so example/python/cross-camera_re-id
 ```
 
-#### 2. 进入特征提取程序所在文件夹
+#### 3. 进入跨摄像头重识别文件夹
 
 ```python
 cd example/python/cross-camera_re-id
 ```
 
-#### 3. 将你需要进行特征提取的图片重命名并放入路径： "../../model/extract/test.jpg".
-
-```python
-	char image_file[] = "../../model/extract/test.jpg";
-```
+#### 4. 配置图片和模型
 
 ####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
 
 ```python
-	char names[] = "../../model/extract/re_id.names";
-	char cfg_file[] = "../../model/extract/re_id.cfg";
-	char weight_file[] = "../../model/extract/re_id.weights";
-	char image_file[] = "../../model/extract/test.jpg";
+	"../../model/extract/re_id.names";
+	"../../model/extract/re_id.cfg";
+	"../../model/extract/re_id.weights";
+	"../../model/extract/test.jpg";
 ```
 &nbsp;&nbsp; **re_id.names** 文件是所要预测属性的值
 &nbsp;&nbsp; **re_id.cfg** 文件是所采用的深度神经网络的结构  
 &nbsp;&nbsp; **re_id.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **test.jpg** 文件是您需要特征提取的图片
 
-#### 4. 运行程序
+#### 5. 运行程序
 
 ```python
 	python cross-camera_re-id.py
@@ -49,16 +51,13 @@ cd example/python/cross-camera_re-id
 
 ### C程序
 
-#### 1. 启动MSVS, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Release .
+#### 1. 启动VS2015, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Release .
 
-#### 2. 将你需要进行特征提取的图片重命名并放入路径： "../../model/extract/test.jpg".
+#### 2. 配置图片和模型 .
 
-```C++
-char image_file[] = "../../model/extract/test.jpg";
-```
 ####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
 
-```C++
+```C
 char names[] = "../../model/extract/re_id.names";
 char cfg_file[] = "../../model/extract/re_id.cfg";
 char weight_file[] = "../../model/extract/re_id.weights";
@@ -77,9 +76,9 @@ char image_file[] = "../../model/extract/test.jpg";
 
 ### python程序
 
-#### 1. 启动MSVS，打开Sunergy.sln，解决方案配置选择 x64 和 Release .
+#### 1. 启动VS2015，打开Sunergy.sln，解决方案配置选择 x64 和 Release .
 #### 2. 选择项目sunergy，右击鼠标属性，配置类型选择为动态库(.dll)，右击鼠标选择生成解决方案 .
-#### 3. 将 lib/windows下的libsunergy.dll 拷贝至 example/python/cross-camera_re-id 目录下，将其后缀名 .dll 改为 .pyd .
+#### 3. 将 lib/windows下的libsunergy.dll 拷贝至 example/python/cross-camera_re-id 目录下，将其重命名为libsunergy.pyd .
 #### 4. 检查 cross-camera_re-id.py 程序中的文件路径是否正确 .
 
 ```python
@@ -94,15 +93,19 @@ char image_file[] = "../../model/extract/test.jpg";
 &nbsp;&nbsp; **re_id.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **test.jpg** 文件是您需要特征提取的图片
 
-#### 5. 由命令行进入目录 example/python/cross-camera_re-id，执行 python cross-camera_re-id.py 运行 .
+#### 5. 打开命令行，运行程序 .
+```python
+cd example/python/cross-camera_re-id
+python cross-camera_re-id.py
+```
 
 --------
 
 &nbsp;
 #### *参考代码:* 
  
-#### C++
-```C++
+#### C
+```C
 #include "Sunergy.h"
 #include <stdio.h>
 #ifdef _WIN32
