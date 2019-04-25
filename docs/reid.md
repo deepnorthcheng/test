@@ -24,7 +24,7 @@ cp -i lib/linux/libsunergy.so example/python/cross-camera_re-id
 cd example/python/cross-camera_re-id
 ```
 
-#### 4. Configure image and model .
+#### 4. Load image and model .
 
 #### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
 
@@ -35,10 +35,10 @@ cd example/python/cross-camera_re-id
 "../../model/extract/re_id.weights"
 "../../model/extract/test.jpg"
 ```
-&nbsp;&nbsp;**re_id.names** ---The name of object detection's result can be
+&nbsp;&nbsp;**re_id.names** ---Empty file.
 &nbsp;&nbsp;**re_id.cfg** ---The structure of the deep neural network.  
 &nbsp;&nbsp;**re_id.weights** --Trained weight.  
-&nbsp;&nbsp; **test.jpg** --- The image you want to do object detection
+&nbsp;&nbsp; **test.jpg** --- The image you want to do feature extraction.
 
 #### 5. Run
 
@@ -54,7 +54,7 @@ cd example/python/cross-camera_re-id
 
 #### 1. Start VS2015, open Sunergy.sln, set x64 and Release.
 
-#### 2. Configure image and model .
+#### 2. Load image and model .
 
 #### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
 
@@ -66,10 +66,10 @@ cd example/python/cross-camera_re-id
 	char image_file[] = "../../model/extract/test.jpg";
 ```
 
-&nbsp;&nbsp;**re_id.names** ---The name of object detection's result can be
+&nbsp;&nbsp;**re_id.names** ---Empty file.
 &nbsp;&nbsp;**re_id.cfg** ---The structure of the deep neural network.  
 &nbsp;&nbsp;**re_id.weights** ---Trained weight.  
-&nbsp;&nbsp; **test.jpg** --- The image you want to do object detection
+&nbsp;&nbsp; **test.jpg** --- The image you want to do feature extraction.
 
 #### 3. Choose project sunergy, Do the: Property -> Configuration type -> Static Library(.lib), then Do the: Build -> Build Sunergy.
 #### 4. Choose project corss-camera_re-id, Do the: Build -> Build corss-camera_re-id. 
@@ -79,9 +79,11 @@ cd example/python/cross-camera_re-id
 ### python
 
 #### 1. Start VS2015, open Sunergy.sln, set x64 and Release.
-#### 2. Choose project sunergy, Do the: Property -> Configuration type -> Dynamic Library(.lib), then Do the: Build -> Build Sunergy.
+#### 2. Choose project sunergy, Do the: Property -> Configuration type -> Dynamic Library(.dll), then Do the: Build -> Build Sunergy.
 #### 3. Copy the libsunergy.dll in lib/windows to example/python/corss-camera_re-id, and rename it as libsunergy.pyd.
-#### 4. Check the if the files' locations are consistent with the path in corss-camera_re-id.py.
+#### 4. Load image and model .
+
+#### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
 
 ```python
 "../../model/extract/re_id.names"
@@ -90,7 +92,7 @@ cd example/python/cross-camera_re-id
 "../../model/extract/test.jpg"
 ```
 
-&nbsp;&nbsp;**re_id.names** ---The name of object detection's result can be.  
+&nbsp;&nbsp;**re_id.names** ---Empty file.  
 &nbsp;&nbsp;**re_id.cfg** ---The structure of the deep neural network.  
 &nbsp;&nbsp;**re_id.weights** ---Trained weight.  
 &nbsp;&nbsp; **test.jpg** --- The image you want to do object detection

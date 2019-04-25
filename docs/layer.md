@@ -23,8 +23,7 @@ param3=1
 include “mylayer.h”,
 Funtion string_to_layer_type Add:  if(strcmp(type, “[mylayer]”) ==0) return MYLAYER
 Add Function: parse_mylayer
-Modify Function: parse_network_cfg (Add the following code: 
-else if(lt == MYLAYER){  l = parse_mylayer(arg);} )
+Modify Function: parse_network_cfg (Add the following code: else if(lt == MYLAYER){  l = parse_mylayer(arg);} )
 ```
 
 ### 5. network.c 

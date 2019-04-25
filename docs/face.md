@@ -24,7 +24,7 @@ cp -i lib/linux/libsunergy.so example/python/face_attribute_prediction
 cd example/python/face_attribute_prediction
 ```
 
-#### 4. Configure image and model .
+#### 4. Load image and model .
 
 #### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
 
@@ -38,7 +38,7 @@ cd example/python/face_attribute_prediction
 &nbsp;&nbsp;**age1.1.names** ---The value of the attribute to be predicted, as in this case,  age.  
 &nbsp;&nbsp;**age1.1.cfg** ---The structure of the deep neural network.  
 &nbsp;&nbsp;**age1.1.weights** ---Trained weight.  
-&nbsp;&nbsp; **en.jpg** --- The image you want to predict
+&nbsp;&nbsp; **en.jpg** --- The image you want to predict.
 
 #### 5. Run
 
@@ -54,12 +54,12 @@ python face_attribute_prediction.py
 
 #### 1. Start VS2015, open Sunergy.sln, set x64 and Release.
 
-#### 2. Configure image and model .
+#### 2. Load image and model .
 
 #### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
 
 
-```C++
+```C
 char names[] = "../../model/classifier/age1.1.names";
 char cfg_file[] = "../../model/classifier/age1.1.cfg";
 char weight_file[] = "../../model/classifier/age1.1.weights";
@@ -68,7 +68,7 @@ char image_file[] = "../../model/classifier/en.jpg";
 &nbsp;&nbsp;**age1.1.names** ---The value of the attribute to be predicted, as in this case,  age.  
 &nbsp;&nbsp;**age1.1.cfg** ---The structure of the deep neural network.  
 &nbsp;&nbsp;**age1.1.weights** ---Trained weight.  
-&nbsp;&nbsp; **en.jpg** --- The image you want to predict
+&nbsp;&nbsp; **en.jpg** --- The image you want to predict.
 
 #### 3. Choose project sunergy, Do the: Property -> Configuration type -> Static Library(.lib), then Do the: Build -> Build Sunergy.
 #### 4. Choose project face_attribute_prediction, Do the: Build -> Build face_attribute_prediction.  
@@ -78,9 +78,11 @@ char image_file[] = "../../model/classifier/en.jpg";
 ### python
 
 #### 1. Start VS2015, open Sunergy.sln, set x64 and Release.
-#### 2. Choose project sunergy, Do the: Property -> Configuration type -> Dynamic Library(.lib), then Do the: Build -> Build Sunergy.
+#### 2. Choose project sunergy, Do the: Property -> Configuration type -> Dynamic Library(.dll), then Do the: Build -> Build Sunergy.
 #### 3. Copy the libsunergy.dll in lib/windows to example/python/face_attribute_prediction, and rename it as libsunergy.pyd.
-#### 4. Check the if the files' locations are consistent with the path in face_attribute_prediction.py.
+#### 4. Load image and model .
+
+#### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
 
 ```python
 "../../model/classifier/age1.1.names"
@@ -92,7 +94,7 @@ char image_file[] = "../../model/classifier/en.jpg";
 &nbsp;&nbsp;**age1.1.names** ---The value of the attribute to be predicted, as in this case,  age.  
 &nbsp;&nbsp;**age1.1.cfg** ---The structure of the deep neural network.  
 &nbsp;&nbsp;**age1.1.weights** ---Trained weight.  
-&nbsp;&nbsp; **en.jpg** --- The image you want to predict
+&nbsp;&nbsp; **en.jpg** --- The image you want to predict.
 
 #### 5. Open cmd and run .
 ```python

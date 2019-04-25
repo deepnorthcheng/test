@@ -12,19 +12,19 @@ cd Sunergy
 make
 ```
 
-#### 2. Copy libsunergy.so to the object detection folder .
+#### 2. Copy libsunergy.so to the object detection folder 
 
 ```pyhton
 cp -i lib/linux/libsunergy.so example/python/object_detection
 ```
 
-#### 3. Enter the object detection folder .
+#### 3. Enter the object detection folder 
 
 ```python
 cd example/python/object_detection
 ```
 
-#### 4. Configure image and model .
+#### 4. Configure image and model 
 
 #### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
 
@@ -36,10 +36,10 @@ cd example/python/object_detection
 "../../model/detect/dog.jpg";
 ```
 
-&nbsp;&nbsp;**coco.names** ---The name of object detection's result can be
+&nbsp;&nbsp;**coco.names** ---The name of object detection's result can be.
 &nbsp;&nbsp;**yolov3.cfg** ---The structure of the deep neural network.  
 &nbsp;&nbsp;**yolov3.weights** --Trained weight.  
-&nbsp;&nbsp; **dog.jpg** --- The image you want to do object detection
+&nbsp;&nbsp; **dog.jpg** --- The image you want to do object detection.
 
 #### 5. Run
 
@@ -55,7 +55,7 @@ python object_detection.py
 
 #### 1. Start VS2015, open Sunergy.sln, set x64 and Release.
 
-#### 2. Configure image and model .
+#### 2. Load image and model .
 
 #### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
 
@@ -67,10 +67,10 @@ python object_detection.py
 	char image_file[] = "../../model/detect/dog.jpg";
 ```
 
-&nbsp;&nbsp;**coco.names** ---The name of object detection's result can be
+&nbsp;&nbsp;**coco.names** ---The name of object detection's result can be.
 &nbsp;&nbsp;**yolov3.cfg** ---The structure of the deep neural network.  
 &nbsp;&nbsp;**yolov3.weights** ---Trained weight.  
-&nbsp;&nbsp; **dog.jpg** --- The image you want to do object detection
+&nbsp;&nbsp;**dog.jpg** --- The image you want to do object detection.
 
 #### 3. Choose project sunergy, Do the: Property -> Configuration type -> Static Library(.lib), then Do the: Build -> Build Sunergy.
 #### 4. Choose project object_detection, Do the: Build -> Build object_detection. 
@@ -79,9 +79,11 @@ python object_detection.py
 ### python
 
 #### 1. Start VS2015, open Sunergy.sln, set x64 and Release.
-#### 2. Choose project sunergy, Do the: Property -> Configuration type -> Dynamic Library(.lib), then Do the: Build -> Build Sunergy.
+#### 2. Choose project sunergy, Do the: Property -> Configuration type -> Dynamic Library(.dll), then Do the: Build -> Build Sunergy.
 #### 3. Copy the libsunergy.dll in lib/windows to example/python/object_detection, and rename it as libsunergy.pyd.
-#### 4. Check the if the files' locations are consistent with the path in object_detection.py.
+#### 4. Load image and model .
+
+#### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
 
 ```python
 "../../model/detect/coco.names"
@@ -90,10 +92,10 @@ python object_detection.py
 "../../model/detect/dog.jpg"
 ```
 
-&nbsp;&nbsp;**coco.names** ---The name of object detection's result can be
+&nbsp;&nbsp;**coco.names** ---The name of object detection's result can be.
 &nbsp;&nbsp;**yolov3.cfg** ---The structure of the deep neural network.  
 &nbsp;&nbsp;**yolov3.weights** ---Trained weight.  
-&nbsp;&nbsp; **dog.jpg** --- The image you want to do object detection
+&nbsp;&nbsp;**dog.jpg** --- The image you want to do object detection.
 
 #### 5. Open cmd and run .
 ```python

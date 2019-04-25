@@ -12,19 +12,19 @@ cd Sunergy
 make
 ```
 
-#### 2. Copy libsunergy.so to the multi-object_tracking folder .
+#### 2. Copy libsunergy.so to the multi-object_tracking folder 
 
 ```pyhton
 cp -i lib/linux/libsunergy.so example/python/multi-object_tracking
 ```
 
-#### 3. Enter the multi-object tracking folder .
+#### 3. Enter the multi-object tracking folder 
 
 ```python
 cd example/python/multi-object_tracking
 ```
 
-#### 4. Configure labels and images of viedeo . 
+#### 4. Load labels and images of video 
 ```python
 MOTDIR ="../../model/tracking/MOT16/test/MOT16-06/det/"
 image_file = "../../model/tracking/MOT16/test/MOT16-06/img1/"
@@ -45,7 +45,7 @@ python multi-object_tracking.py
 
 #### 1. Start VS2015, open example/c/tracking/tracking.sln , set x64 and Release.
 
-#### 2. Configure labels and images of viedeo . 
+#### 2. Load labels and images of viedeo . 
 
 ```C
         #define MOTDIR "../../../model/tracking/MOT16/test/MOT16-06/"

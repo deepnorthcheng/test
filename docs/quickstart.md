@@ -30,7 +30,6 @@ git clone https://github.com/DeepNorthAI/Sunergy_multiPlatform.git
 Go to Sunergy and download yolo-v3 model
 
 ```bash
-
 cd Sunergy_multiPlatform/Sunergy/
 wget -P model/ https://pjreddie.com/media/files/yolov3.weights
 ```
@@ -92,7 +91,7 @@ git clone https://github.com/DeepNorthAI/Sunergy_multiPlatform.git
 
 ### 4 Open Projects
 #### 4.1 Sunergy and Examples
-   * Start VS2015, open project Sunergy.sln .
+   * Start VS2015, open project Sunergy.sln .<br>
 *This project includes Sunergy and four examples: object detection, face attribute prediction, pose estimation and cross-camera reid*
 
 #### 4.2 Example : multi-object tracking
@@ -108,7 +107,7 @@ git clone https://github.com/DeepNorthAI/Sunergy_multiPlatform.git
 *Note: These four examples all work as described above. Different examples correspond to different projects.*
 
 #### 5.2 Example : multi-object tracking
-* choose tracking, right-click and choose build .
-* choose tracking, right-click and choose set as startup item, and then press F5 to run .
+* Choose tracking, right-click and choose build .
+* Choose tracking, right-click and choose set as startup project, and then press F5 to run .
 
-#### 5.3 See detailed information in  [Examples](example.md) 
+#### 5.3 See detailed information in [Examples](example.md) 

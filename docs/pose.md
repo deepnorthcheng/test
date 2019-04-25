@@ -13,31 +13,31 @@ cd Sunergy
 make
 ```
 
-#### 2. Copy libsunergy.so to the pose estimation folder .
+#### 2. Copy libsunergy.so to the pose estimation folder 
 
 ```pyhton
 cp -i lib/linux/libsunergy.so example/python/pose_estimation
 ```
 
-#### 3. Enter the pose estimation folder .
+#### 3. Enter the pose estimation folder 
 
 ```python
 cd example/python/pose_estimation
 ```
 
-#### 4. Configure image and model .
+#### 4. Load image and model 
 
 #### &nbsp;&nbsp;&nbsp; Check if the following three files' locations and names are consistent with  the following code.
 
 
 ```python
 "../../model/pose/coco.data";
-char cfg_file[] = "../../model/pose/BODY-POSE25_DET_002.cfg";
-char weight_file[] = "../../model/pose/BODY-POSE25_DET_002.weights";
-char image_file[] = "../../model/pose/person.jpg";
+"../../model/pose/BODY-POSE25_DET_002.cfg";
+"../../model/pose/BODY-POSE25_DET_002.weights";
+"../../model/pose/person.jpg";
 ``` 
 
-&nbsp;&nbsp;**coco.data** ---The information of dataset COCO, and it can index to coco.names
+&nbsp;&nbsp;**coco.data** ---The information of dataset COCO, and it can index to coco.names.
 &nbsp;&nbsp;**BODY-POSE25_DET_002.cfg** --- The structure of the deep neural network.  
 &nbsp;&nbsp;**BODY-POSE25_DET_002.weights** --- Trained weight.  
 &nbsp;&nbsp;**person.jpg** --- The image you want to estimation.
@@ -56,7 +56,7 @@ python pose_estimation.py
 
 #### 1. Start VS2015, open Sunergy.sln, set x64 and Release.
 
-#### 2. Configure image and model .
+#### 2. Load image and model .
 
 #### &nbsp;&nbsp;&nbsp; Check if the following three files' locations and names are consistent with  the following code.
 
@@ -68,7 +68,7 @@ char weight_file[] = "../../model/pose/pose.weights";
 char image_file[] = "../../model/pose/person.jpg";
 ``` 
 
-&nbsp;&nbsp; **coco.names** ---The name of object detection's result can be, such as: dog, car...  
+&nbsp;&nbsp; **coco.names** ---The name of object detection's result can be.
 &nbsp;&nbsp;**BODY-POSE25_DET_002.weights** --- The structure of the deep neural network.  
 &nbsp;&nbsp;**BODY-POSE25_DET_002.weights** --- Trained weight.  
 &nbsp;&nbsp;**person.jpg** --- The image you want to estimation.
@@ -80,9 +80,12 @@ char image_file[] = "../../model/pose/person.jpg";
 ### python
 
 #### 1. Start VS2015, open Sunergy.sln.
-#### 2. Choose project sunergy, Do the: Property -> Configuration type -> Dynamic Library(.lib), then Do the: Build -> Build Sunergy.
+#### 2. Choose project sunergy, Do the: Property -> Configuration type -> Dynamic Library(.dll), then Do the: Build -> Build Sunergy.
 #### 3. Copy the libsunergy.dll in lib/windows to example/python/pose_estimation, and rename it as libsunergy.pyd.
-#### 4. Check the if the files' locations are consistent with the path in pose_estimation.py.
+#### 4. Load image and model .
+
+#### &nbsp;&nbsp;&nbsp; Check if the following three files' locations and names are consistent with  the following code.
+
 
 ```python
 "../../model/pose/coco.data";

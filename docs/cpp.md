@@ -1,4 +1,4 @@
-# C++ interface
+# Sunergy C++ interface
 
 ## 1 Sunergy Datatypes Reference
 ### 1.1 sunergy_t

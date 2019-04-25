@@ -85,16 +85,16 @@ Now that you have installed Sunergy.
 ## Windows10
 
 ## 1 Platform
-* install and run Sunergy on Windows10
+* Windows10
 
 ## 2 IDE Environment
 * Microsoft Visual Studio 2015
    * Click [here](https://visualstudio.microsoft.com/zh-hans/downloads/) to download  
    * CUDA 8.0 does not support VS2017, so VS2015 is recommended
-   * Visual Studio should be installed before installing GPU environment
+   * Microsoft Visual Studio should be installed before installing GPU environment
   
 ## 3 Prerequisites
 * [CUDA](https://developer.nvidia.com/cuda-toolkit-archive) is required for GPU mode  
-  * library version 8+ and the latest driver version are recommended   
+  * Library version 8+ and the latest driver version are recommended   
 * [CuDNN](https://developer.nvidia.com/cudnn) is an accelerator package  
-  * library version 6+ and the latest driver version are recommended
+  * Library version 6+ and the latest driver version are recommended

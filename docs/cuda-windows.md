@@ -7,7 +7,7 @@
 * Download the Local type and corresponding patches .<br>
 ![](/screenshot/CUDA/0.png)
 
-### 1.2 Installation CUDA
+### 1.2 Install CUDA
 * Double-click cuda_8.0.61_win10.exe to install .<br>
 ![](/screenshot/CUDA/1.png)
 * Choose the custom mode, click Next .<br>
@@ -23,18 +23,18 @@
   Right-click  Computer, open Properties -> Advanced System Settings -> Environment Variable.<br>
   Configure environment variables in the System Variables as follows .
 ```
-CUDA_PATH 		C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0
+CUDA_PATH 		    C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0
 CUDA_PATH_V8_0		C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0
 CUDA_BIN_PATH 		%CUDA_PATH%\bin
 CUDA_LIB_PATH 		%CUDA_PATH%\lib\x64
-CUDA_SDK_BIN_PATH	%CUDA_SDK_PATH%\bin\win64
-CUDA_SDK_LIB_PATH	%CUDA_SDK_PATH%\common\lib\x64
-CUDA_SDK_PATH		C:\Program Files\NVIDIA Corporation\CUDA Samples\v8.0
+CUDA_SDK_BIN_PATH	 %CUDA_SDK_PATH%\bin\win64
+CUDA_SDK_LIB_PATH	 %CUDA_SDK_PATH%\common\lib\x64
+CUDA_SDK_PATH		 C:\Program Files\NVIDIA Corporation\CUDA Samples\v8.0
 ```
 *Note: Please check whether the CUDA path is consistent with that on your computer* .
 
 ### 1.4 Check the Installation State
-* Open cmd, enter nvcc-V to check the installation state .<br>
+* Open cmd, enter nvcc -V to check the installation state .<br>
 ![](/screenshot/CUDA/7.png)
 
 
@@ -42,5 +42,5 @@ CUDA_SDK_PATH		C:\Program Files\NVIDIA Corporation\CUDA Samples\v8.0
 * Click [here](https://developer.nvidia.com/cudnn) to download cuDNN, select the version above 6.0 .
 * Register and log in for downloading .
 * After downloading, decompress the downloaded compressed package .
-* copy cudnn64_6.dll, cudnn.h, cudnn.lib to the bin, include, lib\x64 folders under the path of CUDA respectively .<br> 
+* Copy cudnn64_6.dll, cudnn.h, cudnn.lib to the bin, include, lib\x64 folders under the path of CUDA respectively .<br> 
 *The default path of CUDA is C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0* .
