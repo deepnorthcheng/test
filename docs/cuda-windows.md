@@ -21,9 +21,9 @@
 
 ### 1.3 Configure Environment Variables
   Right-click  Computer, open Properties -> Advanced System Settings -> Environment Variable.<br>
-  Configure environment variable in the System variables as follows .
+  Configure environment variables in the System Variables as follows .
 ```
-CUDA_PATH 			C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0
+CUDA_PATH 		C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0
 CUDA_PATH_V8_0		C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0
 CUDA_BIN_PATH 		%CUDA_PATH%\bin
 CUDA_LIB_PATH 		%CUDA_PATH%\lib\x64
@@ -43,4 +43,4 @@ CUDA_SDK_PATH		C:\Program Files\NVIDIA Corporation\CUDA Samples\v8.0
 * Register and log in for downloading .
 * After downloading, decompress the downloaded compressed package .
 * copy cudnn64_6.dll, cudnn.h, cudnn.lib to the bin, include, lib\x64 folders under the path of CUDA respectively .<br> 
-*The default path of CUDA is **C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0*** .
+*The default path of CUDA is C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0* .

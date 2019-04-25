@@ -12,7 +12,6 @@
 
 * Development
 
-  * [Architecture](architecture.md)
   * [Define your own layer](layer.md)
   * [Training](train.md)
   * [Import models from other frameworks](import.md)

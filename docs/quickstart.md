@@ -23,7 +23,7 @@ If you do not use GPU environment, please skip
 ### 3 Clone sunergy source from github
 The folder includes five examples: object detection, face attribute prediction, pose estimation, cross-camera re-id and multi-object tracking.
 ```bash
-https://github.com/DeepNorthAI/Sunergy_multiPlatform
+git clone https://github.com/DeepNorthAI/Sunergy_multiPlatform.git
 ```
 
 
@@ -87,27 +87,28 @@ If you do not use GPU environment, please skip
 ### 3  Clone sunergy source from github
 The folder includes five examples: object detection, face attribute prediction, pose estimation, cross-camera re-id and multi-object tracking.
 ```bash
-https://github.com/DeepNorthAI/Sunergy_multiPlatform
+git clone https://github.com/DeepNorthAI/Sunergy_multiPlatform.git
 ```
 
-### 4 Open the Projects
-#### 4.1 object detection/face attribute prediction/pose estimation/cross-camera re-id
+### 4 Open Projects
+#### 4.1 Sunergy and Examples
    * Start VS2015, open project Sunergy.sln .
+*This project includes Sunergy and four examples: object detection, face attribute prediction, pose estimation and cross-camera reid*
 
-#### 4.2 multi-object tracking
+#### 4.2 Example : multi-object tracking
    * Start VS2015, open project example/c/tracking/tracking.sln .
 
 ### 5 Build and Run
 
-#### 5.1 object_detection/face_attribute_prediction/pose_estimation/cross-camera re-id
-* choose sunergy, right-click and choose build .
-* choose object detection/face attribute prediction/pose estimation/cross-camera re-id, right-click and choose build .
-* choose object detection/face attribute prediction/pose estimation/cross-camera re-id, right-click and choose set as startup project, and then press F5 to run .
+#### 5.1 Sunergy and Examples
+* Choose sunergy, right-click and choose build .
+* Choose object detection/face attribute prediction/pose estimation/cross-camera re-id, right-click and choose build .
+* Choose object detection/face attribute prediction/pose estimation/cross-camera re-id, right-click and choose set as startup project, and then press F5 to run .
 
 *Note: These four examples all work as described above. Different examples correspond to different projects.*
 
-#### 5.2 tracking
+#### 5.2 Example : multi-object tracking
 * choose tracking, right-click and choose build .
 * choose tracking, right-click and choose set as startup item, and then press F5 to run .
 
-#### 5.3 See detailed information in [Examples](example.md) 
+#### 5.3 See detailed information in  [Examples](example.md) 
