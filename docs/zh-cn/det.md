@@ -24,7 +24,7 @@ cp -i lib/linux/libsunergy.so example/python/object_detection
 cd example/python/object_detection
 ```
 
-#### 4. 配置图片和模型
+#### 4. 读取图片和模型
 
 ####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
 
@@ -53,7 +53,7 @@ python object_detection.py
 
 #### 1. 启动VS2015, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Release .
 
-#### 2. 配置图片和模型 .
+#### 2. 读取图片和模型 .
 
 ####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
 
@@ -79,7 +79,9 @@ char image_file[] = "../../model/detect/dog.jpg";
 #### 1. 启动VS2015，打开Sunergy.sln，解决方案配置选择 x64 和 Release .
 #### 2. 选择项目sunergy，右击鼠标属性，配置类型选择为动态库(.dll)，右击鼠标选择生成解决方案 .
 #### 3. 将 lib/windows下的libsunergy.dll 拷贝至 example/python/object_detection 目录下，将其重命名为libsunergy.pyd .
-#### 4. 检查 object_detection.py 程序中的文件路径是否正确 .
+#### 4. 读取图片和模型 .
+
+####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
 
 ```python
 "../../model/detect/coco.names"

@@ -24,7 +24,7 @@ cp -i lib/linux/libsunergy.so example/python/pose_estimation
 cd example/python/pose_estimation
 ```
 
-#### 4. 配置图片和模型
+#### 4. 读取图片和模型
 
 ####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
 
@@ -37,7 +37,7 @@ cd example/python/pose_estimation
 
 &nbsp;&nbsp; **coco.data** 文件是COCO数据集信息，并可索引至coco.names
 &nbsp;&nbsp; **BODY-POSE25_DET_002.cfg** 文件是所采用的深度神经网络的结构  
-&nbsp;&nbsp; **pose.weights** 文件是已训练好的权重  
+&nbsp;&nbsp; **BODY-POSE25_DET_002.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **person.jpg** 文件是您要姿态估计的图片
 
 #### 5. 运行程序
@@ -55,7 +55,7 @@ python pose_estimation.py
 
 #### 1. 启动VS2015, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Release .
 
-#### 2. 配置图片和模型
+#### 2. 读取图片和模型 .
 ####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
 
 ```C
@@ -79,7 +79,8 @@ char image_file[] = "../../model/pose/person.jpg";
 #### 1. 启动VS2015，打开Sunergy.sln, 解决方案配置选择 x64 和 Release .
 #### 2. 选择项目sunergy，右击鼠标属性，配置类型选择为动态库(.dll)，右击鼠标选择生成解决方案 .
 #### 3. 将 lib/windows下的 libsunergy.dll 拷贝至 example/python/pose_estimation 目录下，将其重命名为libsunergy.pyd .
-#### 4. 检查 pose_estimation.py 程序中的文件路径是否正确 .
+#### 4. 读取图片和模型 .
+####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
 
 ```python
 "../../model/pose/coco.data";

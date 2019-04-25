@@ -18,13 +18,13 @@ make
 cp -i lib/linux/libsunergy.so example/python/multi-object_tracking
 ```
 
-#### 3. 进入多目标追踪程文件夹
+#### 3. 进入多目标跟踪文件夹
 
 ```python
 cd example/python/multi-object_tracking
 ```
 
-#### 4. 配置视频图片
+#### 4. 读取视频标签和图片
 ```python
 MOTDIR ="../../model/tracking/MOT16/test/MOT16-06/det/"
 image_file = "../../model/tracking/MOT16/test/MOT16-06/img1/"
@@ -44,7 +44,7 @@ python multi-object_tracking.py
 
 #### 1. 启动VS2015, 打开项目 example/c/tracking/tracking.sln, 解决方案配置选择 x64 和 Release .
 
-#### 2. 配置视频图片 .
+#### 2. 读取视频标签和图片 .
 
 ```C
 #define MOTDIR "../../../model/tracking/MOT16/test/MOT16-06/"

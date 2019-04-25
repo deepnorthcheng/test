@@ -87,24 +87,24 @@ git clone https://github.com/DeepNorthAI/Sunergy_multiPlatform.git
 ```
 
 ### 4 打开项目
-#### 4.1 打开Sunergy和例子
-   * 运行VS2015, 打开项目Sunergy.sln .
-**此项目下包括了 Sunergy 和四个例子: 目标检测， 人脸属性预测， 姿态估计， 跨摄像头重识别**
+#### 4.1 Sunergy和例子
+   * 运行VS2015, 打开项目Sunergy.sln .<br>
+*此项目下包括了 Sunergy 和四个例子: 目标检测， 人脸属性预测， 姿态估计， 跨摄像头重识别*
 
-#### 4.2 打开例子 : 多目标跟踪
+#### 4.2 例子 : 多目标跟踪
    * 运行VS2015, 打开项目example/c/tracking/tracking.sln .
 
 
 ### 5 生成解决方案及运行
 
-#### 5.1 打开Sunergy和例子
+#### 5.1 Sunergy和例子
 * 选择项目sunergy, 右击鼠标选择生成解决方案 .
 * 选择项目object detection/face attribute prediction/pose estimation/cross-camera re-id, 右击鼠标选择生成解决方案 .
 * 选择项目object detection/face attribute prediction/pose estimation/cross-camera re-id, 右击鼠标选择设为启动项, F5执行 .
 
 *注：这四个例子的运行方式均如上文所述，不同的例子对应于不同的项目*
 
-#### 5.2 打开例子 : 多目标跟踪
+#### 5.2 例子 : 多目标跟踪
 * 选择项目tracking, 右击鼠标选择生成解决方案 .
 * 选择项目tracking, 右击鼠标选择设为启动项, F5执行 .
 

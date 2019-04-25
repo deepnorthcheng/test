@@ -34,7 +34,7 @@ cd example/python/cross-camera_re-id
 	"../../model/extract/re_id.weights";
 	"../../model/extract/test.jpg";
 ```
-&nbsp;&nbsp; **re_id.names** 文件是所要预测属性的值
+&nbsp;&nbsp; **re_id.names** 空文件
 &nbsp;&nbsp; **re_id.cfg** 文件是所采用的深度神经网络的结构  
 &nbsp;&nbsp; **re_id.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **test.jpg** 文件是您需要特征提取的图片
@@ -64,7 +64,7 @@ char weight_file[] = "../../model/extract/re_id.weights";
 char image_file[] = "../../model/extract/test.jpg";
 ```
 
-&nbsp;&nbsp; **re_id.names** 文件是所要预测属性的值
+&nbsp;&nbsp; **re_id.names** 空文件
 &nbsp;&nbsp; **re_id.cfg** 文件是所采用的深度神经网络的结构  
 &nbsp;&nbsp; **re_id.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **test.jpg** 文件是您需要特征提取的图片
@@ -88,7 +88,7 @@ char image_file[] = "../../model/extract/test.jpg";
 "../../model/extract/test.jpg"
 ```
 
-&nbsp;&nbsp; **re_id.names** 文件是所要预测属性的值
+&nbsp;&nbsp; **re_id.names** 空文件
 &nbsp;&nbsp; **re_id.cfg** 文件是所采用的深度神经网络的结构  
 &nbsp;&nbsp; **re_id.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **test.jpg** 文件是您需要特征提取的图片
