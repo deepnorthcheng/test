@@ -23,7 +23,7 @@
 ### 1.3 配置环境变量
   右击我的电脑, 打开 属性 -> 高级系统设置 -> 环境变量, 在系统变量中如下所示配置环境变量
 ```
-CUDA_PATH 			C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0
+CUDA_PATH 		C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0
 CUDA_PATH_V8_0		C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0
 CUDA_BIN_PATH 		%CUDA_PATH%\bin
 CUDA_LIB_PATH 		%CUDA_PATH%\lib\x64
@@ -43,4 +43,4 @@ CUDA_SDK_PATH		C:\Program Files\NVIDIA Corporation\CUDA Samples\v8.0
 * 下载时需要注册登录
 * 下载完成后，将下载得到的压缩包解压缩
 * 将cudnn64_6.dll, cudnn.h, cudnn.lib 分别复制到CUDA安装路径下的bin, include, lib\x64文件夹中<br> 
-*CUDA默认安装路径为 **C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0***
+*CUDA默认安装路径为 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0*
