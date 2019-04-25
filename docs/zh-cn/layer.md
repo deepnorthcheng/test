@@ -36,12 +36,12 @@ get_layer_string函数中添加
 case MYLAYER:  return “MYLAYER”
 resize_network函数中添加：
 }else if(l.type == MYLAYER){
-   mylayer_layer(&l, w, h);}
+   mylayer_layer(&l, w, h);}
 ```
 
 ### 6. 完善mylayer.c
 ```
-layer make_my_layer(param, ...)
-forward_my_layer(const layer l, network_state state)
+layer make_my_layer(param, ...)
+forward_my_layer(const layer l, network_state state)
 ```
 
