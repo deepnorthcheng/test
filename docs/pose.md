@@ -90,7 +90,7 @@ Choose project **sunergy**, do the: *Property -> Configuration type -> Dynamic L
 Then do the: *Build -> Build Sunergy*.
 #### 3. Copy libsunergy.dll to the pose estimation folder 
 Copy **libsunergy.dll** in *lib/windows* to *example/python/pose_estimation*.  
-Rename it as libsunergy.pyd.
+Rename it as **libsunergy.pyd**.
 #### 4. Load image and model 
 
 Check if the following three files' locations and names are consistent with  the following code.
