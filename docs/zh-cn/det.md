@@ -26,15 +26,15 @@ cd example/python/object_detection
 
 #### 4. 读取图片和模型
 
-####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
+检查以下文件是否在相应位置，名称是否与代码中一致 .
 
 ```python
-"../../model/detect/coco.names";
+"../../model/detect/coco.names";  
 "../../model/detect/yolov3.cfg";
 "../../model/detect/yolov3.weights";
 "../../model/detect/dog.jpg";
 ```
-&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值
+&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值  
 &nbsp;&nbsp; **yolov3.cfg** 文件是所采用的深度神经网络的结构  
 &nbsp;&nbsp; **yolov3.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **dog.jpg** 文件是您需要目标检测的图片
@@ -51,11 +51,12 @@ python object_detection.py
 
 ### C程序
 
-#### 1. 启动VS2015, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Release .
+#### 1. 打开项目
+启动VS2015, 打开项目 Sunergy.sln, 解决方案配置选择 x64 和 Release .
 
-#### 2. 读取图片和模型 .
+#### 2. 读取图片和模型 
 
-####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
+检查以下文件是否在相应位置，名称是否与代码中一致 .
 
 ```C
 
@@ -65,23 +66,30 @@ char weight_file[] = "../../model/detect/yolov3.weights";
 char image_file[] = "../../model/detect/dog.jpg";
 ```
 
-&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值
+&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值  
 &nbsp;&nbsp; **yolov3.cfg** 文件是所采用的深度神经网络的结构  
 &nbsp;&nbsp; **yolov3.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **dog.jpg** 文件是您需要目标检测的图片
 
-#### 3. 选择项目sunergy，右击鼠标属性，配置类型选择为静态库(.lib)，之后右击鼠标选择生成解决方案 .
-#### 4. 选择项目object_detection，右击鼠标选择生成解决方案 .
-####  &nbsp;&nbsp;&nbsp;&nbsp; 再次右击鼠标将其设为启动项目，并运行.
+#### 3. 生成Sunergy
+选择项目**sunergy**，右击鼠标属性，配置类型选择为静态库(.lib).   
+之后右击鼠标选择生成解决方案.
+#### 4. 生成项目并运行
+选择项目**object_detection**，右击鼠标选择生成解决方案.    
+再次右击鼠标将其设为启动项目，并运行.
 
 ### python程序
 
-#### 1. 启动VS2015，打开Sunergy.sln，解决方案配置选择 x64 和 Release .
-#### 2. 选择项目sunergy，右击鼠标属性，配置类型选择为动态库(.dll)，右击鼠标选择生成解决方案 .
-#### 3. 将 lib/windows下的libsunergy.dll 拷贝至 example/python/object_detection 目录下，将其重命名为libsunergy.pyd .
-#### 4. 读取图片和模型 .
+#### 1. 打开项目
+启动VS2015，打开Sunergy.sln，解决方案配置选择 x64 和 Release .
+#### 2. 生成Sunergy
+选择项目**sunergy**，右击鼠标属性，配置类型选择为动态库(.dll)，右击鼠标选择生成解决方案 .
+#### 3. 将 libsunergy.dll 复制到目标检测文件夹
+将 *lib/windows*下的 **libsunergy.dll** 拷贝至 *example/python/object_detection* 目录下.   
+将其重命名为 **libsunergy.pyd**.
+#### 4. 读取图片和模型 
 
-####  &nbsp;&nbsp;&nbsp;检查以下文件是否在相应位置，名称是否与代码中一致 .
+检查以下文件是否在相应位置，名称是否与代码中一致 .
 
 ```python
 "../../model/detect/coco.names"
@@ -90,12 +98,12 @@ char image_file[] = "../../model/detect/dog.jpg";
 "../../model/detect/dog.jpg"
 ```
 
-&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值
+&nbsp;&nbsp; **coco.names** 文件是所要预测属性的值  
 &nbsp;&nbsp; **yolov3.cfg** 文件是所采用的深度神经网络的结构  
 &nbsp;&nbsp; **yolov3.weights** 文件是已训练好的权重  
 &nbsp;&nbsp; **dog.jpg** 文件是您需要目标检测的图片
 
-#### 5. 打开命令行，运行程序 .
+#### 5. 打开命令行，运行程序 
 ```python
 cd example/python/object_detection
 python object_detection.py

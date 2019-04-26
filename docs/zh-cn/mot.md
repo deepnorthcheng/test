@@ -42,15 +42,18 @@ python multi-object_tracking.py
 
 ### C程序 
 
-#### 1. 启动VS2015, 打开项目 example/c/tracking/tracking.sln, 解决方案配置选择 x64 和 Release .
+#### 1. 打开项目
+启动VS2015, 打开项目 example/c/tracking/tracking.sln, 解决方案配置选择 x64 和 Release .
 
-#### 2. 读取视频标签和图片 .
+#### 2. 读取视频标签和图片 
 
 ```C
 #define MOTDIR "../../../model/tracking/MOT16/test/MOT16-06/"
 ```
-#### 3. 选择项目tracking，右击鼠标选择生成解决方案 .
-#### 4. 再次右击鼠标将其设为启动项目，并运行 .
+#### 3. 生成项目
+选择项目tracking，右击鼠标选择生成解决方案 .
+#### 4. 运行
+再次右击鼠标将其设为启动项目，并运行 .
 
 
 ---------------

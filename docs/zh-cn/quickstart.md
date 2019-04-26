@@ -20,7 +20,7 @@ pip install opencv-python
 * [检查cuda环境](/zh-cn/cuda8.0&cudnnv6.md)<br>
 
 
-### 3 从github克隆sunergy源代码
+### 3 从github克隆Sunergy源代码
 文件夹中包含五个例子：目标检测, 人脸属性预测, 姿态估计, 跨摄像头重识别和多目标跟踪
 
 ```bash
@@ -34,7 +34,7 @@ cd Sunergy_multiPlatform/Sunergy/
 wget -P model/ https://pjreddie.com/media/files/yolov3.weights
 ```
 
-### 4 编译sunergy
+### 4 编译Sunergy
 修改编译Makefile
 ```bash
 gedit Makefile
@@ -52,7 +52,7 @@ PYTHON=1
 LIBPATH=1
 TESTTIME=0
 NNPACK=0
-PYTHON_VERSON=2
+PYTHON_VERSION=2
 ```
 
 保存退出，然后编译
@@ -60,7 +60,7 @@ PYTHON_VERSON=2
 make
 ```
 
-### 5 测试sunergy
+### 5 测试Sunergy
 
 执行yolov3 检测dog的demo
 ```bash
@@ -80,7 +80,7 @@ python demo.py
 * [检查GPU驱动和CUDA 环境](/zh-cn/cuda-windows.md)
 
 
-### 3 从github克隆sunergy源代码
+### 3 从github克隆Sunergy源代码
 文件夹中包含五个例子：目标检测, 人脸属性预测, 姿态估计, 跨摄像头重识别和多目标跟踪
 ```bash
 git clone https://github.com/DeepNorthAI/Sunergy_multiPlatform.git
