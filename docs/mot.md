@@ -43,16 +43,19 @@ python multi-object_tracking.py
 
 ### C
 
-#### 1. Start VS2015, open example/c/tracking/tracking.sln , set x64 and Release.
+#### 1. Open project
+Start VS2015, open example/c/tracking/tracking.sln , set x64 and Release.
 
-#### 2. Load labels and images of viedeo . 
+#### 2. Load labels and images of viedeo 
 
 ```C
-        #define MOTDIR "../../../model/tracking/MOT16/test/MOT16-06/"
+#define MOTDIR "../../../model/tracking/MOT16/test/MOT16-06/"
 ```
 
-#### 3. Do the: Build -> Build tracking.
-#### 4. Set *tracking* as the startup project and run it.
+#### 3. Build project
+Choose project **tracking**, do the: *Build -> Build tracking*.
+#### 4. Run
+Set **tracking** as the startup project and run it.
 
 
 ---------------

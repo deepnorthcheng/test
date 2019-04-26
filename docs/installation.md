@@ -57,7 +57,7 @@ You can install the dependencies with
 
     pip install -r requirements.txt
 
-but we suggest first installing the [Anaconda](https://store.continuum.io/cshop/anaconda/) Python distribution, which provides most of the necessary packages, as well as the `hdf5` library dependency.
+but we suggest firstly installing the [Anaconda](https://store.continuum.io/cshop/anaconda/) Python distribution, which provides most of the necessary packages, as well as the `hdf5` library dependency.
 
 *Sunergy's Python interface works with Python 2.7. Python 3.3+ should work out of the box without protobuf support. For protobuf support please install protobuf 3.0 alpha (https://developers.google.com/protocol-buffers/). Earlier Pythons are your own adventure.*
 
@@ -78,7 +78,7 @@ Configure the build by copying and modifying the example `Makefile` for your set
 
 **Speed**: 
 
-Now that you have installed Sunergy.
+Now you have installed Sunergy.
 
 -----
 

@@ -20,7 +20,7 @@ If you do not use GPU environment, please skip
 * [Check GPU Driver Installation](gpu_driver.md)<br>
 * [Check CUDA environment](cuda8.0&cudnnv6.md)<br>
 
-### 3 Clone sunergy source from github
+### 3 Clone Sunergy source from github
 The folder includes five examples: object detection, face attribute prediction, pose estimation, cross-camera re-id and multi-object tracking.
 ```bash
 git clone https://github.com/DeepNorthAI/Sunergy_multiPlatform.git
@@ -34,7 +34,7 @@ cd Sunergy_multiPlatform/Sunergy/
 wget -P model/ https://pjreddie.com/media/files/yolov3.weights
 ```
 
-### 4 Compile sunergy
+### 4 Compile Sunergy
 Modify Makefile
 ```bash
 gedit Makefile
@@ -52,7 +52,7 @@ PYTHON=1
 LIBPATH=1
 TESTTIME=0
 NNPACK=0
-PYTHON_VERSON=2
+PYTHON_VERSION=2
 ```
 
 Save exit and compile
@@ -61,7 +61,7 @@ make clean
 make
 ```
 
-### 5 Test sunergy
+### 5 Test Sunergy
 
 Execute yolov3 demo to detect dogs
 
@@ -83,7 +83,7 @@ If you do not use GPU environment, please skip
 * [Check GPU Driver Installation and CUDA environment](cuda-windows.md)
 
 
-### 3  Clone sunergy source from github
+### 3  Clone Sunergy source from github
 The folder includes five examples: object detection, face attribute prediction, pose estimation, cross-camera re-id and multi-object tracking.
 ```bash
 git clone https://github.com/DeepNorthAI/Sunergy_multiPlatform.git

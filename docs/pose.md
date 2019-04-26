@@ -27,17 +27,17 @@ cd example/python/pose_estimation
 
 #### 4. Load image and model 
 
-#### &nbsp;&nbsp;&nbsp; Check if the following three files' locations and names are consistent with  the following code.
+Check if the following three files' locations and names are consistent with  the following code.
 
 
 ```python
-"../../model/pose/coco.data";
+"../../model/pose/coco.data";  
 "../../model/pose/BODY-POSE25_DET_002.cfg";
 "../../model/pose/BODY-POSE25_DET_002.weights";
 "../../model/pose/person.jpg";
 ``` 
 
-&nbsp;&nbsp;**coco.data** ---The information of dataset COCO, and it can index to coco.names.
+&nbsp;&nbsp;**coco.data** ---The information of dataset COCO, and it can index to coco.names.  
 &nbsp;&nbsp;**BODY-POSE25_DET_002.cfg** --- The structure of the deep neural network.  
 &nbsp;&nbsp;**BODY-POSE25_DET_002.weights** --- Trained weight.  
 &nbsp;&nbsp;**person.jpg** --- The image you want to estimation.
@@ -54,11 +54,12 @@ python pose_estimation.py
 
 ### C
 
-#### 1. Start VS2015, open Sunergy.sln, set x64 and Release.
+#### 1. Open project
+Start VS2015, open Sunergy.sln, set x64 and Release.
 
-#### 2. Load image and model .
+#### 2. Load image and model 
 
-#### &nbsp;&nbsp;&nbsp; Check if the following three files' locations and names are consistent with  the following code.
+Check if the following three files' locations and names are consistent with  the following code.
 
 
 ```C
@@ -68,23 +69,31 @@ char weight_file[] = "../../model/pose/pose.weights";
 char image_file[] = "../../model/pose/person.jpg";
 ``` 
 
-&nbsp;&nbsp; **coco.names** ---The name of object detection's result can be.
+&nbsp;&nbsp; **coco.names** ---The name of object detection's result can be.   
 &nbsp;&nbsp;**BODY-POSE25_DET_002.weights** --- The structure of the deep neural network.  
 &nbsp;&nbsp;**BODY-POSE25_DET_002.weights** --- Trained weight.  
 &nbsp;&nbsp;**person.jpg** --- The image you want to estimation.
 
-#### 3. Choose project sunergy, Do the: Property -> Configuration type -> Static Library(.lib), then Do the: Build -> Build Sunergy.
-#### 4. Choose project pose_estimation, Do the: Build -> Build pose_estimation. 
-####  &nbsp;&nbsp;&nbsp;&nbsp;Set *pose_estimation* as the startup project and run it.
+#### 3. Build Sunergy
+Choose project **sunergy**, do the: *Property -> Configuration type -> Static Library(.lib)*<Br> 
+Then do the: *Build -> Build Sunergy*.
+#### 4. Build and run
+Choose project **pose_estimation**, do the: *Build -> Build pose_estimation*.  
+Set **pose_estimation** as the startup project and run it.
 
 ### python
 
-#### 1. Start VS2015, open Sunergy.sln.
-#### 2. Choose project sunergy, Do the: Property -> Configuration type -> Dynamic Library(.dll), then Do the: Build -> Build Sunergy.
-#### 3. Copy the libsunergy.dll in lib/windows to example/python/pose_estimation, and rename it as libsunergy.pyd.
-#### 4. Load image and model .
+#### 1. Open project
+Start VS2015, open Sunergy.sln.
+#### 2. Build Sunergy
+Choose project **sunergy**, do the: *Property -> Configuration type -> Dynamic Library(.dll)*.<br> 
+Then do the: *Build -> Build Sunergy*.
+#### 3. Copy libsunergy.dll to the pose estimation folder 
+Copy **libsunergy.dll** in *lib/windows* to *example/python/pose_estimation*.  
+Rename it as libsunergy.pyd.
+#### 4. Load image and model 
 
-#### &nbsp;&nbsp;&nbsp; Check if the following three files' locations and names are consistent with  the following code.
+Check if the following three files' locations and names are consistent with  the following code.
 
 
 ```python
@@ -94,12 +103,12 @@ char image_file[] = "../../model/pose/person.jpg";
 "../../model/pose/person.jpg";
 ```
 
-&nbsp;&nbsp;**coco.data** ---The information of dataset COCO, and it can index to coco.names
+&nbsp;&nbsp;**coco.data** ---The information of dataset COCO, and it can index to coco.names  
 &nbsp;&nbsp;**BODY-POSE25_DET_002.weights** --- The structure of the deep neural network.  
 &nbsp;&nbsp;**BODY-POSE25_DET_002.weights** --- Trained weight.  
 &nbsp;&nbsp;**person.jpg** --- The image you want to estimation.
 
-#### 5. Open cmd and run .
+#### 5. Open cmd and run 
 ```python
 cd example/python/pose estimation
 python pose estimation.py

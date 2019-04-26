@@ -12,21 +12,21 @@ cd Sunergy
 make
 ```
 
-#### 2. Copy libsunergy.so to the cross-camera_re-id folder .
+#### 2. Copy libsunergy.so to the cross-camera_re-id folder 
 
 ```pyhton
 cp -i lib/linux/libsunergy.so example/python/cross-camera_re-id
 ```
 
-#### 3. Enter the cross-camera_re-id folder .
+#### 3. Enter the cross-camera_re-id folder 
 
 ```python
 cd example/python/cross-camera_re-id
 ```
 
-#### 4. Load image and model .
+#### 4. Load image and model 
 
-#### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
+Check if the following four files' locations and names are consistent with  the following code.
 
 
 ```python
@@ -35,15 +35,15 @@ cd example/python/cross-camera_re-id
 "../../model/extract/re_id.weights"
 "../../model/extract/test.jpg"
 ```
-&nbsp;&nbsp;**re_id.names** ---Empty file.
+&nbsp;&nbsp;**re_id.names** ---Empty file.  
 &nbsp;&nbsp;**re_id.cfg** ---The structure of the deep neural network.  
 &nbsp;&nbsp;**re_id.weights** --Trained weight.  
-&nbsp;&nbsp; **test.jpg** --- The image you want to do feature extraction.
+&nbsp;&nbsp;**test.jpg** --- The image you want to do feature extraction.
 
 #### 5. Run
 
 ```python
-	python cross-camera_re-id.py
+python cross-camera_re-id.py
 ```
 
 -----------
@@ -52,38 +52,45 @@ cd example/python/cross-camera_re-id
 
 ### C
 
-#### 1. Start VS2015, open Sunergy.sln, set x64 and Release.
+#### 1. Open project
+Start VS2015, open Sunergy.sln, set x64 and Release.
 
-#### 2. Load image and model .
+#### 2. Load image and model 
 
-#### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
+Check if the following four files' locations and names are consistent with  the following code.
 
 
 ```C
-	char names[] = "../../model/extract/re_id.names";
+	char names[] = "../../model/extract/re_id.names";  
 	char cfg_file[] = "../../model/extract/re_id.cfg";
 	char weight_file[] = "../../model/extract/re_id.weights";
 	char image_file[] = "../../model/extract/test.jpg";
 ```
 
-&nbsp;&nbsp;**re_id.names** ---Empty file.
+&nbsp;&nbsp;**re_id.names** ---Empty file.  
 &nbsp;&nbsp;**re_id.cfg** ---The structure of the deep neural network.  
 &nbsp;&nbsp;**re_id.weights** ---Trained weight.  
-&nbsp;&nbsp; **test.jpg** --- The image you want to do feature extraction.
+&nbsp;&nbsp;**test.jpg** --- The image you want to do feature extraction.
 
-#### 3. Choose project sunergy, Do the: Property -> Configuration type -> Static Library(.lib), then Do the: Build -> Build Sunergy.
-#### 4. Choose project corss-camera_re-id, Do the: Build -> Build corss-camera_re-id. 
-####  &nbsp;&nbsp;&nbsp;&nbsp;Set *corss-camera_re-id* as the startup project and run it.
+#### 3. Build Sunergy
+Choose project **sunergy**, do the: *Property -> Configuration type -> Static Library(.lib)*.  <br> Then do the: *Build -> Build Sunergy*.
+#### 4. Build and run
+Choose project **corss-camera_re-id**, do the: *Build -> Build corss-camera_re-id*.   
+Set **corss-camera_re-id** as the startup project and run it.
 
 
 ### python
 
-#### 1. Start VS2015, open Sunergy.sln, set x64 and Release.
-#### 2. Choose project sunergy, Do the: Property -> Configuration type -> Dynamic Library(.dll), then Do the: Build -> Build Sunergy.
-#### 3. Copy the libsunergy.dll in lib/windows to example/python/corss-camera_re-id, and rename it as libsunergy.pyd.
-#### 4. Load image and model .
+#### 1. Open project
+Start VS2015, open Sunergy.sln, set x64 and Release.
+#### 2. Build Sunergy
+Choose project **sunergy**, do the: *Property -> Configuration type -> Dynamic Library(.dll)*.<br>  Then do the: *Build -> Build Sunergy*.
+#### 3. Copy libsunergy.dll to the cross-camera_re-id folder 
+Copy the **libsunergy.dll** in *lib/windows* to *example/python/corss-camera_re-id*.    
+Rename it as **libsunergy.pyd**.
+#### 4. Load image and model 
 
-#### &nbsp;&nbsp;&nbsp; Check if the following four files' locations and names are consistent with  the following code.
+Check if the following four files' locations and names are consistent with  the following code.
 
 ```python
 "../../model/extract/re_id.names"
@@ -95,9 +102,9 @@ cd example/python/cross-camera_re-id
 &nbsp;&nbsp;**re_id.names** ---Empty file.  
 &nbsp;&nbsp;**re_id.cfg** ---The structure of the deep neural network.  
 &nbsp;&nbsp;**re_id.weights** ---Trained weight.  
-&nbsp;&nbsp; **test.jpg** --- The image you want to do object detection
+&nbsp;&nbsp;**test.jpg** --- The image you want to do object detection
 
-#### 5. Open cmd and run .
+#### 5. Open cmd and run 
 ```python
 cd example/python/corss-camera_re-id
 python corss-camera_re-id.py
