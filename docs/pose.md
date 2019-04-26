@@ -69,7 +69,7 @@ char weight_file[] = "../../model/pose/pose.weights";
 char image_file[] = "../../model/pose/person.jpg";
 ``` 
 
-&nbsp;&nbsp; **coco.names** ---The name of object detection's result can be.   
+&nbsp;&nbsp;**coco.names** ---The name of object detection's result can be.   
 &nbsp;&nbsp;**BODY-POSE25_DET_002.weights** --- The structure of the deep neural network.  
 &nbsp;&nbsp;**BODY-POSE25_DET_002.weights** --- Trained weight.  
 &nbsp;&nbsp;**person.jpg** --- The image you want to estimation.
