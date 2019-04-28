@@ -96,5 +96,5 @@ Now you have installed Sunergy.
 ## 3 Prerequisites
 * [CUDA](https://developer.nvidia.com/cuda-toolkit-archive) is required for GPU mode  
   * Library version 8+ and the latest driver version are recommended   
-* [CuDNN](https://developer.nvidia.com/cudnn) is an accelerator package  
+* [cuDNN](https://developer.nvidia.com/cudnn) is an accelerator package  
   * Library version 6+ and the latest driver version are recommended
