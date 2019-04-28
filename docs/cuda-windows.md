@@ -26,7 +26,7 @@
 CUDA_PATH 		 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0
 CUDA_PATH_V8_0		 C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0
 CUDA_BIN_PATH 		 %CUDA_PATH%\bin
-CUDA_LIB_PATH 	      %CUDA_PATH%\lib\x64
+CUDA_LIB_PATH 	         %CUDA_PATH%\lib\x64
 CUDA_SDK_BIN_PATH	 %CUDA_SDK_PATH%\bin\win64
 CUDA_SDK_LIB_PATH	 %CUDA_SDK_PATH%\common\lib\x64
 CUDA_SDK_PATH		 C:\Program Files\NVIDIA Corporation\CUDA Samples\v8.0
