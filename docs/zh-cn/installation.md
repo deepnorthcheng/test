@@ -94,5 +94,5 @@ Sunergy可以通过Make命令进行相应编译。
 ## 3 依赖项
 * [CUDA](https://developer.nvidia.com/cuda-toolkit-archive) 运行GPU模型必须的依赖项  
   * 建议使用CUDA8+和最新的CUDA库  
-* [CuDNN](https://developer.nvidia.com/cudnn) 加速包  
+* [cuDNN](https://developer.nvidia.com/cudnn) 加速包  
   * 建议使用CuDNN6+和最新的CuDNN库
